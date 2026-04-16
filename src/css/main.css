@@ -2,3 +2,6 @@
 @import url(./global.css);
 @import url(./reset.css);
 @import url(./variables.css);
+
+/* Estilos Específicos */
+@import url(../js/components/Header/Header.css);
