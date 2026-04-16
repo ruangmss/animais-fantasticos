@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--secondary-1);
+  outline-offset: 2px;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font: var(--text-font-m);
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  max-width: max-content;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
