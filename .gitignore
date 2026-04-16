@@ -1,0 +1,24 @@
+# Files
+.DS_Store
+Thumbs.db
+*.log
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Builds/outputs 
+dist/
+*.min.js
+*.min.css
+
+# Ambiente/sensíveis (mesmo sem backend, para familiarização com boas práticas)
+.env
+.env.local
+*.key
+
+# Temp/backup
+*.bak
+*.tmp
