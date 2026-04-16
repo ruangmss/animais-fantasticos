@@ -6,8 +6,6 @@
 }
 
 .header {
-  display: flex;
-  gap: 30px;
   align-items: center;
   padding: 15px 30px;
 }

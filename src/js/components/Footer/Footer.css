@@ -1,0 +1,31 @@
+.footer-bg {
+  background: var(--primary-2);
+  justify-self: end;
+  width: 75%;
+  margin-top: 40px;
+}
+
+.footer {
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.footer-copy {
+  font: var(--details-font-xs);
+  color: var(--black-1);
+}
+
+@media (max-width: 768px) {
+  .footer-bg {
+    width: 100%;
+  }
+
+  .footer {
+    place-content: center;
+    padding: 20px 30px;
+  }
+
+  .footer-copy {
+    text-align: center;
+  }
+}

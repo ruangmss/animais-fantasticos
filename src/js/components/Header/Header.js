@@ -1,7 +1,7 @@
 export function Header() {
   return `
   <header class="header-bg">
-    <div class="container header">
+    <div class="header container">
       <ul class="header-list">
         <li><a class="header-link" href="#animals">ANIMAIS</a></li>
         <li><a class="header-link" href="#about">SOBRE</a></li>
