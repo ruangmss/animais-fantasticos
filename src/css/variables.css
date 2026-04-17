@@ -4,14 +4,9 @@
   --secondary-font: 'Playfair Display SC', serif;
 
   /* Tipografia Títulos */
-  --title-font-xl: 700 3rem / 1 var(--secondary-font);
-  --title-font-l: 700 2.5rem / 1.2 var(--secondary-font);
-  --title-font-m: 700 2rem / 1.25 var(--secondary-font);
-  --title-font-s: 700 1.5rem / 1.3 var(--secondary-font);
-  --title-font-xs: 700 1.125rem / 1.4 var(--secondary-font);
+  --title-font: 600 2.5rem / 1.2 var(--secondary-font);
 
   /* Tipografia Textos */
-  --text-font-l: 400 1.25rem / 1.6 var(--primary-font);
   --text-font-m: 400 1.125rem / 1.6 var(--primary-font);
   --text-font-s: 400 1rem / 1.6 var(--primary-font);
 
@@ -32,8 +27,6 @@
   --black-2: #111;
 
   /* Margens */
-  --margin-xl: 3.125rem;
-  --margin-x: 2.5rem;
   --margin-m: 1.25rem;
   --margin-s: 0.625rem;
   --margin-xs: 0.3125rem;
@@ -42,4 +35,18 @@
   --border-l: 15px;
   --border-m: 10px;
   --border-s: 5px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --title-font: 600 1.875rem / 1.2 var(--secondary-font);
+    --text-font-m: 400 1rem / 1.6 var(--primary-font);
+    --details-font-m: 600 1.125rem / 1.4 var(--primary-font);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --title-font: 600 1.215rem / 1.2 var(--secondary-font);
+  }
 }

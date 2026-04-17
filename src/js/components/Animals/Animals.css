@@ -1,0 +1,101 @@
+.animals {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.animals-title {
+  font: var(--title-font);
+}
+
+.animals-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+}
+
+.animals-images {
+  max-height: 400px;
+  max-width: 315px;
+  overflow-y: scroll;
+}
+
+.animals-images::-webkit-scrollbar {
+  width: 15px;
+}
+
+.animals-images::-webkit-scrollbar-thumb {
+  background-color: var(--primary-2);
+  border-left: 5px solid transparent;
+  background-clip: padding-box; /* Faz o background não preencher a borda definida acima, criando um espaçamento */
+}
+
+.animals-images img {
+  cursor: pointer;
+  border: 2px solid var(--primary-2);
+  margin-bottom: var(--margin-xs);
+}
+
+.animal {
+  display: none;
+  animation: fade 0.75s forwards;
+}
+
+.animal.visible {
+  display: block;
+}
+
+.animal h2 {
+  font: var(--details-font-m);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: var(--margin-s);
+}
+
+.animal h2:before {
+  content: '';
+  height: 0.625rem;
+  width: 1.875rem;
+  background-color: var(--primary-2);
+}
+
+.animal p {
+  margin-bottom: var(--margin-m);
+}
+
+@media (max-width: 992px) {
+  .animals-content {
+    gap: 30px;
+  }
+
+  .animals-images {
+    max-height: 450px;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .animals-title {
+    font: var(--title-font);
+  }
+
+  .animals-content {
+    grid-template-columns: 1fr;
+  }
+
+  .animals-images {
+    justify-self: center;
+    max-width: 100%;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
