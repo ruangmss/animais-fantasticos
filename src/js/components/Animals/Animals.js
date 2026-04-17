@@ -67,8 +67,8 @@ export function showTextByClick() {
   const images = document.querySelectorAll('.animals-images img');
   const texts = document.querySelectorAll('.animal');
 
+  /* .lenght verifica se há elementos, é uma excelente prática */
   if (images.length && texts.length) {
-    /* .lenght verifica se há elementos, é uma excelente prática */
     texts[0].classList.add('visible');
     images.forEach(function (image, index) {
       image.addEventListener('click', function () {
