@@ -1,6 +1,6 @@
 export function Animals() {
   return `
-    <section class="animals container">
+    <section class="animals container" id="animals">
       <div class="animals-title">
         <h1>Animais Fantásticos</h1>
       </div>
@@ -64,18 +64,20 @@ export function Animals() {
 }
 
 export function showTextByClick() {
-  const images = document.querySelectorAll('.animals-images img');
-  const texts = document.querySelectorAll('.animal');
+  const images = document.querySelectorAll(".animals-images img");
+  const texts = document.querySelectorAll(".animal");
 
   /* .lenght verifica se há elementos, é uma excelente prática */
   if (images.length && texts.length) {
-    texts[0].classList.add('visible');
+    texts[0].classList.add("visible");
     images.forEach(function (image, index) {
-      image.addEventListener('click', function () {
-        texts.forEach(function (texto) {
-          texto.classList.remove('visible'); /* Remove a classe visible dos textos antes de adicionar a nova */
+      image.addEventListener("click", function () {
+        texts.forEach(function (text) {
+          text.classList.remove(
+            "visible",
+          ); /* Remove a classe visible dos textos antes de adicionar a nova */
         });
-        texts[index].classList.add('visible');
+        texts[index].classList.add("visible");
       });
     });
   }

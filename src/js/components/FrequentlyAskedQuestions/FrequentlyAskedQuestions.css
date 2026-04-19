@@ -1,0 +1,55 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.faq-title {
+  font: var(--title-font);
+}
+
+.question {
+  margin-bottom: var(--margin-s);
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  align-items: center;
+  font: var(--details-font-m);
+  color: var(--secondary-1);
+  align-items: center;
+  max-width: max-content;
+}
+
+.question span {
+  transition: transform 0.5s ease;
+}
+
+.question::before {
+  content: "";
+  height: 0.5rem;
+  width: 1.5rem;
+  background-color: var(--primary-2);
+}
+
+.answer {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  transition: all 0.75s ease-in-out;
+}
+
+.answer.visible {
+  opacity: 1;
+  visibility: visible;
+  max-height: 500px;
+  margin-bottom: var(--margin-m);
+}
+
+.answer.visible:last-child {
+  margin-bottom: 0;
+}
+
+/* Verifica se o elemento imediataente depois é .answer.visible para aplicar a rotação*/
+.question:has(+ .answer.visible) span {
+  transform: rotate(180deg);
+}
