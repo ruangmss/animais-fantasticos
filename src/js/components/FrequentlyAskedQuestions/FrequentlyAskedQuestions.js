@@ -1,5 +1,5 @@
 export function FrequentlyAskedQuestions() {
-  return /* html */ `
+  return `
     <section class="faq container" id="faq">
       <div class="faq-title">
         <h1>FAQ</h1>

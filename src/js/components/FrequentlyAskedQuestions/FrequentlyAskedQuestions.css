@@ -26,8 +26,8 @@
 
 .question::before {
   content: "";
-  height: 0.5rem;
-  width: 1.5rem;
+  min-height: 0.5rem;
+  min-width: 1.5rem;
   background-color: var(--primary-2);
 }
 
@@ -52,4 +52,13 @@
 /* Verifica se o elemento imediataente depois é .answer.visible para aplicar a rotação*/
 .question:has(+ .answer.visible) span {
   transform: rotate(180deg);
+}
+
+@media (max-width: 480px) {
+  .question::before {
+    content: "";
+    min-height: 0.375rem;
+    min-width: 1.125rem;
+    background-color: var(--primary-2);
+  }
 }

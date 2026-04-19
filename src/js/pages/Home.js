@@ -5,6 +5,7 @@ import {
   FrequentlyAskedQuestions,
   showAnswers,
 } from "../components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.js";
+import { About } from "../components/About/About.js";
 
 export function Home() {
   let header = document.getElementById("header");
@@ -14,7 +15,7 @@ export function Home() {
   if (header && footer && app) {
     header.innerHTML = Header();
     footer.innerHTML = Footer();
-    app.innerHTML = Animals() + FrequentlyAskedQuestions();
+    app.innerHTML = Animals() + About() + FrequentlyAskedQuestions();
     showTextByClick();
     showAnswers();
   }

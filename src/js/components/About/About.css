@@ -1,0 +1,25 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-title {
+  font: var(--title-font);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-content strong {
+  transition: color 0.3s ease;
+}
+
+@media (hover: hover) {
+  .about-content strong:hover {
+    color: var(--secondary-1);
+  }
+}
