@@ -2,7 +2,7 @@ export function FrequentlyAskedQuestions() {
   return `
     <section class="faq container" id="faq">
       <div class="faq-title">
-        <h1>FAQ</h1>
+        <h2>FAQ</h2>
       </div>
       <dl class="faq-content">
         <dt class="question" tabindex="0">Os animais são realmente fantásticos?<span>↓</span></dt>

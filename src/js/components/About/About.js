@@ -2,7 +2,7 @@ export function About() {
   return /* html */ `
     <section class="about container" id="about">
       <div class="about-title">
-        <h1>Sobre</h1> 
+        <h2>Sobre</h2> 
       </div>
       <div class="about-content">
         <p>
