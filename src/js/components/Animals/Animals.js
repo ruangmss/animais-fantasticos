@@ -118,9 +118,9 @@ export function showTextByClick() {
   /* .lenght verifica se há elementos, é uma excelente prática */
   if (images.length && texts.length) {
     texts[0].classList.add("visible");
-    images.forEach(function (image, index) {
-      image.addEventListener("click", function () {
-        texts.forEach(function (text) {
+    images.forEach((image, index) => {
+      image.addEventListener("click", () => {
+        texts.forEach((text) => {
           text.classList.remove(
             "visible",
           ); /* Remove a classe visible dos textos antes de adicionar a nova */

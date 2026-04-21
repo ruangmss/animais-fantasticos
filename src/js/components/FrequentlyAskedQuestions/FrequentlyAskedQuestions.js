@@ -28,8 +28,8 @@ export function showAnswers() {
   const questions = document.querySelectorAll(".question");
 
   if (questions.length) {
-    questions.forEach(function (question) {
-      question.addEventListener("click", function () {
+    questions.forEach((question) => {
+      question.addEventListener("click", () => {
         /* Seleciona o elemento imediatamente abaixo (dd) e adiciona a classe */
         question.nextElementSibling.classList.toggle("visible");
       });
