@@ -25,13 +25,12 @@ export function FrequentlyAskedQuestions() {
 }
 
 export function showAnswers() {
-  const questions = document.querySelectorAll(".question");
-
+  const questions = document.querySelectorAll('.question');
   if (questions.length) {
     questions.forEach((question) => {
-      question.addEventListener("click", () => {
+      question.addEventListener('click', () => {
         /* Seleciona o elemento imediatamente abaixo (dd) e adiciona a classe */
-        question.nextElementSibling.classList.toggle("visible");
+        question.nextElementSibling.classList.toggle('visible');
       });
     });
   }

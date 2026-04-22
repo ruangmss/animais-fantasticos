@@ -112,20 +112,17 @@ export function Animals() {
 }
 
 export function showTextByClick() {
-  const images = document.querySelectorAll(".animals-images img");
-  const texts = document.querySelectorAll(".animal");
-
+  const images = document.querySelectorAll('.animals-images img');
+  const texts = document.querySelectorAll('.animal');
   /* .lenght verifica se há elementos, é uma excelente prática */
   if (images.length && texts.length) {
-    texts[0].classList.add("visible");
+    texts[0].classList.add('visible');
     images.forEach((image, index) => {
-      image.addEventListener("click", () => {
+      image.addEventListener('click', () => {
         texts.forEach((text) => {
-          text.classList.remove(
-            "visible",
-          ); /* Remove a classe visible dos textos antes de adicionar a nova */
+          text.classList.remove('visible'); /* Remove a classe visible dos textos antes de adicionar a nova */
         });
-        texts[index].classList.add("visible");
+        texts[index].classList.add('visible');
       });
     });
   }
