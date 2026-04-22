@@ -7,12 +7,12 @@ export function Animals() {
 
       <div class="animals-content">
         <div class="animals-images">
-          <img src="/src/assets/images/fox.webp" tabindex="0"/>
-          <img src="/src/assets/images/squirrel.webp" tabindex="0"/>
-          <img src="/src/assets/images/bear.webp" tabindex="0"/>
-          <img src="/src/assets/images/wolf.webp" tabindex="0"/>
-          <img src="/src/assets/images/monkey.webp" tabindex="0"/>
-          <img src="/src/assets/images/lion.webp" tabindex="0"/>
+          <img src="/src/assets/images/fox.webp" tabindex="0" alt="Raposa"/>
+          <img src="/src/assets/images/squirrel.webp" tabindex="0" alt="Esquilo"/>
+          <img src="/src/assets/images/bear.webp" tabindex="0" alt="Urso"/>
+          <img src="/src/assets/images/wolf.webp" tabindex="0" alt="Lobo"/>
+          <img src="/src/assets/images/monkey.webp" tabindex="0" alt="Macaco"/>
+          <img src="/src/assets/images/lion.webp" tabindex="0" alt="Leão"/>
         </div>
 
         <div class="animals-texts">
