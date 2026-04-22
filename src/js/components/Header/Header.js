@@ -1,6 +1,6 @@
 export function Header() {
   return `
-    <header class="header-bg">
+    <div class="header-bg">
       <nav class="header container">
         <ul class="header-list">
           <li><a class="header-link" href="#animals">ANIMAIS</a></li>
@@ -10,6 +10,6 @@ export function Header() {
           <li><a class="header-link" href="#" id="login">LOGIN<span>→</span></a></li>
         </ul>
       </nav>
-    </header>
+    </div>
   `;
 }
