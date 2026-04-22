@@ -13,7 +13,7 @@ ul {
 }
 
 body {
-  font: var(--text-font-m);
+  font: var(--text-font);
   color: var(--black-1);
 }
 
