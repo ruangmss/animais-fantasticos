@@ -8,12 +8,14 @@
 .header {
   align-items: center;
   padding: 10px 30px;
+  margin: 0;
 }
 
 .header-list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  align-self: start;
   gap: 20px;
 }
 
