@@ -1,6 +1,6 @@
 export function About() {
   return `
-    <section class="about container" id="about">
+    <section class="about container scroll" id="about">
       <div class="about-title">
         <h2>Sobre</h2> 
       </div>

@@ -1,6 +1,6 @@
 export function Animals() {
   return `
-    <section class="animals container" id="animals">
+    <section class="animals container scroll" id="animals">
       <div class="animals-title">
         <h1>Animais Fantásticos</h1>
       </div>

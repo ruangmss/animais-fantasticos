@@ -7,6 +7,7 @@ import {
 } from '../components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.js';
 import { About } from '../components/About/About.js';
 import { Contact } from '../components/Contact/Contact.js';
+import { initSmoothReveal } from '../modules/smoothReveal.js';
 
 export function Home() {
   let header = document.getElementById('header');
@@ -19,5 +20,6 @@ export function Home() {
     app.innerHTML = Animals() + About() + FrequentlyAskedQuestions() + Contact();
     initTabMenu();
     initAccordionList();
+    initSmoothReveal();
   }
 }

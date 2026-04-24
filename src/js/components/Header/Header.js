@@ -1,6 +1,6 @@
 export function Header() {
   return `
-    <div class="header-bg">
+    <div class="header-bg scroll">
       <nav class="header container">
         <ul class="header-list">
           <li><a class="header-link" href="#animals">ANIMAIS</a></li>

@@ -1,6 +1,6 @@
 export function FrequentlyAskedQuestions() {
   return `
-    <section class="faq container" id="faq">
+    <section class="faq container scroll" id="faq">
       <div class="faq-title">
         <h2>FAQ</h2>
       </div>
