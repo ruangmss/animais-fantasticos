@@ -23,6 +23,7 @@
 .question dt {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .question dt span {
@@ -64,6 +65,7 @@
   .question::before {
     display: none;
   }
+
   .question dt span {
     order: -1;
   }
