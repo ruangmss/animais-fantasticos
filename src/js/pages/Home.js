@@ -3,7 +3,7 @@ import { Footer } from '../components/Footer/Footer.js';
 import { Animals, initTabMenu } from '../components/Animals/Animals.js';
 import {
   FrequentlyAskedQuestions,
-  showAnswers,
+  initAccordionList,
 } from '../components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.js';
 import { About } from '../components/About/About.js';
 import { Contact } from '../components/Contact/Contact.js';
@@ -18,5 +18,6 @@ export function Home() {
     footer.innerHTML = Footer();
     app.innerHTML = Animals() + About() + FrequentlyAskedQuestions() + Contact();
     initTabMenu();
+    initAccordionList();
   }
 }
