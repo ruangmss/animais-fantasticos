@@ -1,5 +1,5 @@
 export function About() {
-  return /* html */ `
+  return `
     <section class="about container" id="about">
       <div class="about-title">
         <h2>Sobre</h2> 

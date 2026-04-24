@@ -46,7 +46,7 @@
   margin-bottom: var(--margin-m);
 }
 
-.answer.visible:last-child {
+.answer.visible:last-of-type {
   margin-bottom: 0;
 }
 

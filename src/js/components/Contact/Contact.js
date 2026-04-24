@@ -1,5 +1,5 @@
 export function Contact() {
-  return /* html */ `
+  return `
     <section class="contact container" id="contact">
       <div class="contact-title">
         <h2>Contato</h2>

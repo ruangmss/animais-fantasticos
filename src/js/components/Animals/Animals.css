@@ -18,6 +18,9 @@
   max-height: 400px;
   max-width: 315px;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .animals-images::-webkit-scrollbar {
@@ -31,9 +34,11 @@
 }
 
 .animals-images img {
-  cursor: pointer;
   border: 2px solid var(--primary-2);
-  margin-bottom: var(--margin-xs);
+}
+
+.animals-images button:focus-visible {
+  outline: none;
 }
 
 .animal {
@@ -89,7 +94,12 @@
   }
 
   .animals-images {
-    justify-self: center;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .animals-images {
     max-width: 100%;
   }
 }
