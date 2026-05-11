@@ -69,7 +69,7 @@ export function initModal() {
 
     closeButton.addEventListener('click', () => {
       modal.close();
-      if (usersText.textContent.trim().includes('dados')) {
+      if (submitButton.style.display !== 'none') {
         form.reset();
       }
     });
@@ -90,7 +90,7 @@ export function initModal() {
     function closeModal(event) {
       if (event.target === modal) {
         modal.close();
-        if (usersText.textContent.trim().includes('dados')) {
+        if (submitButton.style.display !== 'none') {
           form.reset();
         }
       }
