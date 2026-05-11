@@ -39,6 +39,7 @@ export function Modal() {
 
 export function initModal() {
   const modal = document.querySelector('.modal');
+  const form = document.querySelector('#login-form');
   const loginButton = document.querySelector('#login');
   const closeButton = document.querySelector('#close-button');
   const submitButton = document.querySelector('#submit-button');
@@ -52,6 +53,7 @@ export function initModal() {
   if (
     loginButton &&
     modal &&
+    form &&
     closeButton &&
     submitButton &&
     usersText &&
@@ -67,6 +69,9 @@ export function initModal() {
 
     closeButton.addEventListener('click', () => {
       modal.close();
+      if (usersText.textContent.trim().includes('dados')) {
+        form.reset();
+      }
     });
 
     function togglePasswordVisibility() {
@@ -85,6 +90,9 @@ export function initModal() {
     function closeModal(event) {
       if (event.target === modal) {
         modal.close();
+        if (usersText.textContent.trim().includes('dados')) {
+          form.reset();
+        }
       }
     }
 
