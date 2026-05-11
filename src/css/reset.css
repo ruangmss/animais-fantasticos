@@ -32,4 +32,11 @@ img {
 button {
   all: unset;
   cursor: pointer;
+  text-align: center;
+}
+
+input:focus {
+  border: none !important;
+  outline: 2px solid var(--secondary-1);
+  outline-offset: 0px;
 }

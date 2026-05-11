@@ -4,6 +4,7 @@ export function About() {
       <div class="about-title">
         <h2>Sobre</h2> 
       </div>
+      
       <div class="about-content">
         <p>
           O <strong>Animais Fantásticos</strong> nasceu para catalogar e celebrar a biodiversidade de forma intuitiva. Unimos design e biologia para transformar o conhecimento científico em uma experiência visual acessível, destacando a beleza e a importância de cada espécie no ecossistema global.

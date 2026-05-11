@@ -1,0 +1,117 @@
+.modal {
+  background-color: var(--grey);
+  border: 2px solid var(--primary-2);
+  place-self: center;
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+  overflow: visible;
+  opacity: 0;
+  transition:
+    opacity 0.5s ease,
+    display 0.5s allow-discrete,
+    overlay 0.5s allow-discrete;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal[open] {
+  opacity: 1;
+  animation: fade 0.5s ease;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font: var(--details-font-s);
+  position: relative;
+}
+
+.modal-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input input {
+  padding: 7.5px;
+  width: 100%;
+  background-color: var(--grey);
+  border: 1px solid var(--black-1);
+}
+
+.modal button {
+  padding: 5px 10px;
+  background-color: var(--primary-1);
+  color: var(--white);
+  transition: background-color 0.3s ease;
+  max-width: max-content;
+}
+
+#submit-button {
+  align-self: center;
+}
+
+#close-button {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+}
+
+#password {
+  position: relative;
+}
+
+#togglePassword {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  right: 12.5px;
+}
+
+#opened-eye {
+  display: none;
+  width: 20px;
+  color: var(--primary-1);
+  transition: scale 0.3s ease;
+}
+
+#closed-eye {
+  display: block;
+  width: 20px;
+  color: var(--primary-1);
+  transition: scale 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    max-width: 80%;
+  }
+}
+
+@media (hover: hover) {
+  .modal button:hover {
+    background-color: var(--primary-2);
+  }
+
+  #togglePassword:hover #opened-eye,
+  #togglePassword:hover #closed-eye {
+    scale: 1.1;
+  }
+}

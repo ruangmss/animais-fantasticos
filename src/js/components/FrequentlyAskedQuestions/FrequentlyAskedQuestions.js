@@ -4,6 +4,7 @@ export function FrequentlyAskedQuestions() {
       <div class="faq-title">
         <h2>FAQ</h2>
       </div>
+      
       <dl class="faq-content">
         <button type="button" class="question"><dt>Os animais são realmente fantásticos?<span>↓</span></dt></button>
         <dd class="answer">Com certeza! Cada espécie possui habilidades únicas de adaptação, sentidos aguçados e comportamentos sociais complexos que garantem o equilíbrio do ecossistema e nos surpreendem a cada descoberta.</dd>

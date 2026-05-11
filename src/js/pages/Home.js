@@ -8,6 +8,7 @@ import {
 import { About } from '../components/About/About.js';
 import { Contact } from '../components/Contact/Contact.js';
 import { initSmoothReveal } from '../modules/smoothReveal.js';
+import { Modal, initModal } from '../components/Modal/Modal.js';
 
 export function Home() {
   let header = document.getElementById('header');
@@ -17,9 +18,10 @@ export function Home() {
   if (header && footer && app) {
     header.innerHTML = Header();
     footer.innerHTML = Footer();
-    app.innerHTML = Animals() + About() + FrequentlyAskedQuestions() + Contact();
+    app.innerHTML = Animals() + About() + FrequentlyAskedQuestions() + Contact() + Modal();
     initTabMenu();
     initAccordionList();
     initSmoothReveal();
+    initModal();
   }
 }
