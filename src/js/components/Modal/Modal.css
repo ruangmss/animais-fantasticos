@@ -96,7 +96,9 @@
   display: block;
   width: 20px;
   color: var(--primary-1);
-  transition: scale 0.3s ease;
+  transition:
+    scale 0.3s ease,
+    color 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -113,5 +115,6 @@
   #togglePassword:hover #opened-eye,
   #togglePassword:hover #closed-eye {
     scale: 1.1;
+    color: var(--primary-2);
   }
 }
