@@ -40,7 +40,7 @@
 }
 
 .dropdown-list {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 5px;
   align-items: center;
@@ -48,12 +48,19 @@
   padding: 7.5px;
   border: 2px solid var(--black-1);
   position: absolute;
-  animation: fade 0.5s forwards;
   text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
 }
 
 .dropdown-list.active {
-  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .dropdown-list::before {
@@ -108,7 +115,9 @@
   }
 
   .dropdown:hover .dropdown-list {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .dropdown-item a:hover {
