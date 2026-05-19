@@ -44,11 +44,12 @@
   flex-direction: column;
   gap: 5px;
   align-items: center;
-  background-color: var(--secondary-1);
+  background-color: var(--secondary-transparent);
   padding: 7.5px;
   border: 2px solid var(--black-1);
   position: absolute;
   animation: fade 0.5s forwards;
+  text-align: center;
 }
 
 .dropdown-list.active {
@@ -56,10 +57,10 @@
 }
 
 .dropdown-list::before {
-  content: "▲";
+  content: '▲';
   position: absolute;
-  color: var(--secondary-1);
-  top: -20px;
+  color: var(--black-1);
+  top: -21px;
   left: 15px;
 }
 
