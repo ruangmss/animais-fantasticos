@@ -35,7 +35,6 @@
   box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   top: 80px;
-  border-radius: var(--border-s);
   flex-direction: column;
   align-items: start;
   animation: fade 0.5s forwards;
@@ -138,7 +137,6 @@
   color: var(--black-1);
   padding: 10px;
   background-color: var(--primary-1);
-  border-radius: var(--border-m);
   cursor: pointer;
   gap: 7.5px;
   align-items: center;
