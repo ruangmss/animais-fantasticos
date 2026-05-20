@@ -38,7 +38,7 @@ export function initDropDownMenu() {
 
       const dropdown = event.currentTarget;
       const dropdownList = dropdown.querySelector('.dropdown-list');
-      const insideDropdownList = dropdownList.querySelectorAll('a[href^="#"]');
+      const insideDropdownList = dropdownList.querySelectorAll('a');
 
       if (!dropdownList.contains(event.target)) {
         event.preventDefault();
