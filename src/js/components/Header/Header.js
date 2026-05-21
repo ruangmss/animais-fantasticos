@@ -68,9 +68,10 @@ export function initMobileMenu() {
   if (headerButton && symbol && headerList) {
     function manipulateMobileMenu() {
       const headerListElements = headerList.querySelectorAll('*');
+      const headerListLinks = headerList.querySelectorAll('a');
       const ariaExpanded = headerButton.getAttribute('aria-expanded');
 
-      if (headerListElements.length && ariaExpanded) {
+      if (headerListElements.length && headerListLinks && ariaExpanded) {
         if (ariaExpanded === 'false') {
           headerButton.setAttribute('aria-expanded', 'true');
         } else {
@@ -99,6 +100,22 @@ export function initMobileMenu() {
           }
         }
         document.documentElement.addEventListener('click', closeMobileMenu);
+
+        function autoCloseMobileMenu(event) {
+          if (this.contains(event.target)) {
+            headerList.classList.remove('mobile');
+            symbol.classList.remove('mobile');
+            headerButton.setAttribute('aria-expanded', 'false');
+
+            headerListElements.forEach((element) => {
+              element.classList.remove('mobile');
+            });
+          }
+        }
+
+        headerListLinks.forEach((link) => {
+          link.addEventListener('click', autoCloseMobileMenu);
+        });
 
         function fixResizeLayout() {
           const width = window.innerWidth;
