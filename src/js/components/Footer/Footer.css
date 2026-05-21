@@ -7,7 +7,7 @@
 
 .footer {
   align-items: center;
-  padding: 20px 30px;
+  padding: 20px 40px;
   margin: 0;
 }
 
@@ -24,10 +24,17 @@
 
   .footer {
     place-content: center;
-    padding: 20px 30px;
+    padding: 20px 40px;
   }
 
   .footer-copy {
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    place-content: center;
+    padding: 20px 30px;
   }
 }

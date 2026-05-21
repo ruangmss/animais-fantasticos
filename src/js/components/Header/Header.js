@@ -2,7 +2,13 @@ export function Header() {
   return /* html */ `
     <div class="header-bg scroll">
       <nav class="header container">
+      <div class="header-mobile">
+        <div class="header-mobile-left">
+        <img src="/src/assets/images/logo.webp" alt="Raposa"/>
+          <span>Animais Fantásticos</span>
+        </div>
         <button class="header-button" aria-expanded="false">MENU<span class="header-button-symbol">☰</span></button>
+      </div>
         <ul class="header-list">
           <li><a class="header-link" href="#animals">ANIMAIS</a></li>
           <li><a class="header-link" href="#about">SOBRE</a></li>
@@ -128,6 +134,7 @@ export function initMobileMenu() {
             headerListElements.forEach((element) => {
               element.classList.remove('mobile');
             });
+            window.removeEventListener('resize', fixResizeLayout);
           }
         }
         window.addEventListener('resize', fixResizeLayout);
