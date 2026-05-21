@@ -1,12 +1,14 @@
 export function Header() {
-  return /* html */ `
+  return `
     <div class="header-bg scroll">
       <nav class="header container">
       <div class="header-mobile">
+
         <div class="header-mobile-left">
-        <img src="/src/assets/images/logo.webp" alt="Raposa"/>
+          <img src="/src/assets/images/logo.webp" alt="Raposa"/>
           <span>Animais Fantásticos</span>
         </div>
+
         <button class="header-button" aria-expanded="false">MENU<span class="header-button-symbol">☰</span></button>
       </div>
         <ul class="header-list">
@@ -49,19 +51,21 @@ export function initDropDownMenu() {
       const dropdownList = dropdown.querySelector('.dropdown-list');
       const insideDropdownList = dropdownList.querySelectorAll('a');
 
-      if (!dropdownList.contains(event.target)) {
-        event.preventDefault();
-      }
-
-      dropdownList.classList.toggle('active');
-
-      function closeDropdown(event) {
-        if (!dropdown.contains(event.target)) {
-          dropdownList.classList.remove('active');
-          document.removeEventListener('click', closeDropdown); // Quando o dropdown é fechado, seu listener do HTML é removido para que não ocorra leak
+      if (dropdown && dropdownList && insideDropdownList.length) {
+        if (!dropdownList.contains(event.target)) {
+          event.preventDefault();
         }
+
+        dropdownList.classList.toggle('active');
+
+        function closeDropdown(event) {
+          if (!dropdown.contains(event.target)) {
+            dropdownList.classList.remove('active');
+            document.removeEventListener('click', closeDropdown); // Quando o dropdown é fechado, seu listener do HTML é removido para que não ocorra leak
+          }
+        }
+        document.addEventListener('click', closeDropdown);
       }
-      document.addEventListener('click', closeDropdown);
     }
   }
 }
@@ -126,7 +130,7 @@ export function initMobileMenu() {
         function fixResizeLayout() {
           const width = window.innerWidth;
 
-          if (width > 768) {
+          if (width && width > 768) {
             headerList.classList.remove('mobile');
             symbol.classList.remove('mobile');
             headerButton.setAttribute('aria-expanded', 'false');
