@@ -28,7 +28,7 @@
 }
 
 .question dt span {
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .question::before {
@@ -36,14 +36,14 @@
   min-height: 0.5rem;
   min-width: 1.5rem;
   background-color: var(--primary-2);
-  transition: min-width 0.3s ease;
+  transition: min-width 0.5s ease;
 }
 
 .answer {
   opacity: 0;
   visibility: hidden;
   max-height: 0;
-  transition: all 0.75s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .answer.visible {

@@ -43,7 +43,7 @@
 
 .animal {
   display: none;
-  animation: fade 0.75s forwards;
+  animation: fade 0.5s forwards;
 }
 
 .animal.visible {

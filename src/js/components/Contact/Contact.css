@@ -40,13 +40,13 @@
   min-height: 0.5rem;
   min-width: 1.5rem;
   background-color: var(--primary-2);
-  transition: min-width 0.3s ease;
+  transition: min-width 0.5s ease;
 }
 
 .contact-data a {
   transition:
-    color 0.3s ease,
-    min-width 0.3s ease;
+    color 0.5s ease,
+    min-width 0.5s ease;
 }
 
 @media (max-width: 992px) {
