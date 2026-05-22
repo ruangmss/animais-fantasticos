@@ -32,6 +32,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  font: var(--details-font-s);
 }
 
 .contact-data a::before,
@@ -41,6 +42,24 @@
   min-width: 1.5rem;
   background-color: var(--primary-2);
   transition: min-width 0.5s ease;
+}
+
+#operation::after {
+  content: '';
+  border-radius: 50%;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  border: 2px solid var(--black-1);
+  margin-left: var(--margin-xs);
+  transition: background-color 2s ease;
+}
+
+#operation.opened::after {
+  background-color: var(--green);
+}
+
+#operation.closed::after {
+  background-color: var(--red);
 }
 
 .contact-data a {

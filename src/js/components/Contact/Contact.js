@@ -14,11 +14,33 @@ export function Contact() {
           <ul>
             <li><a href=mailto:ruan.gmss@outlook.com>ruan.gmss@outlook.com</a></li>
             <li><a href=tel:99999999999>(99) 99999-9999</a></li>
-            <li><a href="https://maps.app.goo.gl/djBvssAAvGZA6EUY7">Rua Fictícia, 123</a></li>
+            <li><a href="https://maps.app.goo.gl/fkhqaT9xKc6WnQcTA" target="_blank" rel="noopener noreferrer">Itajaí - SC</a></li>
+            <li><a href="https://maps.app.goo.gl/djBvssAAvGZA6EUY7" target="_blank" rel="noopener noreferrer">Rua Fictícia, 123</a></li>
             <li id="operation">De segunda a sexta, das 08:00 às 18:00</li>
           </ul>
         </div> 
       </div>
     </section>
   `;
+}
+
+export function initBusinessHours() {
+  const businessDays = [1, 2, 3, 4, 5];
+  const businessHours = [8, 18];
+  const now = new Date();
+  const currentDay = now.getDay();
+  const currentHour = now.getHours();
+  const operation = document.querySelector('#operation');
+  const matchDay = businessDays.indexOf(currentDay) >= 0 ? true : false;
+  const matchHour = currentHour >= businessHours[0] && currentHour <= businessHours[1];
+
+  if (operation) {
+    if (matchDay && matchHour) {
+      operation.classList.remove('closed');
+      operation.classList.add('opened');
+    } else {
+      operation.classList.remove('opened');
+      operation.classList.add('closed');
+    }
+  }
 }

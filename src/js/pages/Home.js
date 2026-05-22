@@ -6,7 +6,7 @@ import {
   initAccordionList,
 } from '../components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.js';
 import { About } from '../components/About/About.js';
-import { Contact } from '../components/Contact/Contact.js';
+import { Contact, initBusinessHours } from '../components/Contact/Contact.js';
 import { initSmoothReveal } from '../modules/smoothReveal.js';
 import { Modal, initModal } from '../components/Modal/Modal.js';
 import { Numbers, initNumbersAnimation } from '../components/Numbers/Numbers.js';
@@ -27,5 +27,6 @@ export function Home() {
     initSmoothReveal();
     initModal();
     initNumbersAnimation();
+    initBusinessHours();
   }
 }
