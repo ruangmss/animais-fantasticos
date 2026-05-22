@@ -108,13 +108,16 @@ export function initModal() {
       });
 
       if (!allFields) {
+        usersText.style.color = 'var(--secondary-1)';
         usersText.textContent = 'Por favor, preencha todos os campos.';
         return;
       } else if (allFields && passwordInput.value.length < 8) {
+        usersText.style.color = 'var(--secondary-1)';
         usersText.textContent = 'Por favor, insira uma senha entre 8 e 20 caracteres.';
         return;
       }
 
+      usersText.style.color = 'var(--black-1)';
       usersText.textContent = 'Bem-vindo(a)! Login efetuado com sucesso.';
       submitButton.style.display = 'none';
       inputs.forEach((input) => {
