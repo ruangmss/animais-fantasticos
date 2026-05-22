@@ -10,6 +10,7 @@
   --text-font: 400 1.125rem / 1.6 var(--primary-font);
 
   /* Tipografia Detalhes */
+  --details-font-l: 600 1.5rem / 1.4 var(--primary-font);
   --details-font-m: 600 1.25rem / 1.4 var(--primary-font);
   --details-font-s: 600 1.125rem / 1.4 var(--primary-font);
   --details-font-xs: 600 1rem / 1.4 var(--primary-font);
@@ -42,11 +43,13 @@
     --title-font: 600 3rem / 1.2 var(--secondary-font);
     --text-font: 400 1rem / 1.6 var(--primary-font);
     --details-font-m: 600 1.125rem / 1.4 var(--primary-font);
+    --details-font-l: 600 1.35rem / 1.4 var(--primary-font);
   }
 }
 
 @media (max-width: 480px) {
   :root {
     --title-font: 600 2.35rem / 1.2 var(--secondary-font);
+    --details-font-l: 600 1.275rem / 1.4 var(--primary-font);
   }
 }
