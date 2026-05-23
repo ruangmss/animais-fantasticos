@@ -29,6 +29,12 @@ body {
   opacity: 1;
 }
 
+@media (max-width: 1300px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
 @media (max-width: 480px) {
   .container {
     padding: 30px;
