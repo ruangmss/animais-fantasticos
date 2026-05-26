@@ -48,26 +48,30 @@ export function initNumbersAnimation(event) {
 }
 
 export function initFetchAnimals() {
-  async function fetchAnimals(url) {
-    const animalsResponse = await fetch(url); // Retorna um Response
-    const animalsJson = await animalsResponse.json(); // Retorna o JSON do Response
-    const numbersContainer = document.querySelector('.numbers-content');
+  try {
+    async function fetchAnimals(url) {
+      const animalsResponse = await fetch(url); // Retorna um Response
+      const animalsJson = await animalsResponse.json(); // Retorna o JSON do Response
+      const numbersContainer = document.querySelector('.numbers-content');
 
-    animalsJson.forEach((animal) => {
-      const element = document.createElement('div');
-      element.classList.add('numbers-item');
-      element.innerHTML = `
+      animalsJson.forEach((animal) => {
+        const element = document.createElement('div');
+        element.classList.add('numbers-item');
+        element.innerHTML = `
       <div class="numbers-item-header">
         <h3>${animal.species}</h3>
         <img src='${animal.icon}' alt='${animal.iconAlt}'/>
       </div>
       <span>${animal.total}</span>`;
 
-      numbersContainer.appendChild(element);
-    });
+        numbersContainer.appendChild(element);
+      });
 
-    initNumbersAnimation(); // Chama a animação apenas após o fetch, pois ela estava ocorrendo antes de já haver dados, operando incorretamente
+      initNumbersAnimation(); // Chama a animação apenas após o fetch, pois ela estava ocorrendo antes de já haver dados, operando incorretamente
+    }
+
+    fetchAnimals('/src/js/services/api.json');
+  } catch (error) {
+    console.log('Erro: ', error);
   }
-
-  fetchAnimals('/src/js/services/api.json');
 }
