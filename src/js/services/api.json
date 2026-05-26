@@ -1,0 +1,38 @@
+[
+  {
+    "icon": "/src/assets/icons/fox-icon.svg",
+    "iconAlt": "Ícone de raposa",
+    "species": "Raposas",
+    "total": 516
+  },
+  {
+    "icon": "/src/assets/icons/squirrel-icon.svg",
+    "iconAlt": "Ícone de esquilo",
+    "species": "Esquilos",
+    "total": 27612
+  },
+  {
+    "icon": "/src/assets/icons/bear-icon.svg",
+    "iconAlt": "Ícone de urso",
+    "species": "Ursos",
+    "total": 2362
+  },
+  {
+    "icon": "/src/assets/icons/wolf-icon.svg",
+    "iconAlt": "Ícone de lobo",
+    "species": "Lobos",
+    "total": 3627
+  },
+  {
+    "icon": "/src/assets/icons/monkey-icon.svg",
+    "iconAlt": "Ícone de macaco",
+    "species": "Macacos",
+    "total": 7126
+  },
+  {
+    "icon": "/src/assets/icons/lion-icon.svg",
+    "iconAlt": "Ícone de leão",
+    "species": "Leões",
+    "total": 117
+  }
+]

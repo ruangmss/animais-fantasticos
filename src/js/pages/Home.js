@@ -9,7 +9,7 @@ import { About } from '../components/About/About.js';
 import { Contact, initBusinessHours } from '../components/Contact/Contact.js';
 import { initSmoothReveal } from '../modules/smoothReveal.js';
 import { Modal, initModal } from '../components/Modal/Modal.js';
-import { Numbers, initNumbersAnimation } from '../components/Numbers/Numbers.js';
+import { Numbers, initFetchAnimals } from '../components/Numbers/Numbers.js';
 
 export function Home() {
   let header = document.getElementById('header');
@@ -26,7 +26,7 @@ export function Home() {
     initAccordionList();
     initSmoothReveal();
     initModal();
-    initNumbersAnimation();
+    initFetchAnimals();
     initBusinessHours();
   }
 }

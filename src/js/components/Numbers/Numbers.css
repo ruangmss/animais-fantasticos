@@ -16,14 +16,14 @@
   gap: 30px;
 }
 
-.numbers-item h3 {
+.numbers-item-header h3 {
   font: var(--details-font-l);
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-.numbers-item h3 img {
+.numbers-item-header img {
   width: 40px;
   height: 40px;
 }
@@ -31,6 +31,12 @@
 .numbers-item span {
   font: var(--details-font-m);
   color: var(--secondary-1);
+}
+
+.numbers-item-header {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
 }
 
 @media (max-width: 480px) {

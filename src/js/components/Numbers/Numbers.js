@@ -6,35 +6,7 @@ export function Numbers() {
       </div>
 
       <div class="numbers-content">
-        <div class="numbers-item">
-          <h3>Raposas<img src="/src/assets/icons/fox-icon.svg"/></h3>
-          <span>5216</span>
-        </div>
 
-        <div class="numbers-item">
-          <h3>Esquilos<img src="/src/assets/icons/squirrel-icon.svg"/></h3>
-          <span>27612</span>
-        </div>
-
-        <div class="numbers-item">
-          <h3>Ursos<img src="/src/assets/icons/bear-icon.svg"/></h3>
-          <span>2362</span>
-        </div>
-
-        <div class="numbers-item">
-          <h3>Lobos<img src="/src/assets/icons/wolf-icon.svg"/></h3>
-          <span>3627</span>
-        </div>
-
-        <div class="numbers-item">
-          <h3>Macacos<img src="/src/assets/icons/monkey-icon.svg"/></h3>
-          <span>7126</span>
-        </div>
-
-        <div class="numbers-item">
-          <h3>Leões<img src="/src/assets/icons/lion-icon.svg"/></h3>
-          <span>117</span>
-        </div>
       </div>
     </section>
   `;
@@ -73,4 +45,29 @@ export function initNumbersAnimation(event) {
 
   const observer = new MutationObserver(watchMutation);
   observer.observe(numberContainer, { attributes: true });
+}
+
+export function initFetchAnimals() {
+  async function fetchAnimals(url) {
+    const animalsResponse = await fetch(url); // Retorna um Response
+    const animalsJson = await animalsResponse.json(); // Retorna o JSON do Response
+    const numbersContainer = document.querySelector('.numbers-content');
+
+    animalsJson.forEach((animal) => {
+      const element = document.createElement('div');
+      element.classList.add('numbers-item');
+      element.innerHTML = `
+      <div class="numbers-item-header">
+        <h3>${animal.species}</h3>
+        <img src='${animal.icon}' alt='${animal.iconAlt}'/>
+      </div>
+      <span>${animal.total}</span>`;
+
+      numbersContainer.appendChild(element);
+    });
+
+    initNumbersAnimation(); // Chama a animação apenas após o fetch, pois ela estava ocorrendo antes de já haver dados, operando incorretamente
+  }
+
+  fetchAnimals('/src/js/services/api.json');
 }
