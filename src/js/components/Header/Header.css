@@ -88,7 +88,7 @@
 }
 
 .dropdown-list::before {
-  content: '▲';
+  content: "▲";
   position: absolute;
   color: var(--black-1);
   top: -21px;
@@ -96,7 +96,7 @@
 }
 
 .dropdown-list.mobile::before {
-  content: '▲';
+  content: "▲";
   position: absolute;
   color: var(--black-1);
   top: -20px;
@@ -226,7 +226,7 @@
   }
 
   .dropdown-list::before {
-    content: '▲';
+    content: "▲";
     position: absolute;
     color: var(--black-1);
     top: -20px;
@@ -235,6 +235,11 @@
 
   .dropdown-list.mobile {
     display: flex;
+  }
+
+  .header-mobile-left img {
+    width: 55px;
+    height: 35px;
   }
 }
 
@@ -256,11 +261,6 @@
 
   .header-mobile-left {
     margin: 0;
-  }
-
-  .header-mobile-left img {
-    width: 55px;
-    height: 35px;
   }
 
   .header-mobile-left span {
