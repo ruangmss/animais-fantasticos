@@ -1,6 +1,6 @@
 export function Numbers() {
   return `
-    <section class="numbers container scroll">
+    <section class="numbers container scroll" id="numbers">
       <div class="numbers-title">
         <h2>Números</h2>
       </div>
