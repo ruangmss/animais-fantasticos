@@ -10,7 +10,7 @@ export function Modal() {
         <form class="modal-inputs" id="login-form">
           <div class="input">
             <label for="cpf">CPF:</label>
-            <input type="text" id="cpf" name="cpf" required/>
+            <input type="text" inputmode="numeric" id="cpf" name="cpf" maxlength="14" minlength="14" required/>
           </div>
 
           <div class="input">
@@ -49,6 +49,7 @@ export function initModal() {
   const passwordInput = document.querySelector('#password');
   const openedEyeIcon = document.querySelector('#opened-eye');
   const closedEyeIcon = document.querySelector('#closed-eye');
+  const cpfInput = document.getElementById('cpf');
 
   if (
     loginButton &&
@@ -61,9 +62,16 @@ export function initModal() {
     togglePasswordButton &&
     passwordInput &&
     openedEyeIcon &&
-    closedEyeIcon
+    closedEyeIcon &&
+    cpf
   ) {
+    let isLogged = false;
+
     loginButton.addEventListener('click', () => {
+      if (!isLogged) {
+        usersText.style.color = 'var(--black-1)';
+        usersText.textContent = 'Faça login para acessar seus dados!';
+      }
       modal.showModal();
     });
 
@@ -120,6 +128,7 @@ export function initModal() {
       usersText.style.color = 'var(--black-1)';
       usersText.textContent = 'Bem-vindo(a)! Login efetuado com sucesso.';
       submitButton.style.display = 'none';
+      isLogged = true;
       inputs.forEach((input) => {
         input.setAttribute('disabled', 'true');
       });
@@ -128,8 +137,44 @@ export function initModal() {
       }, 1500);
     }
 
+    function validateInputs() {
+      let cpfValue = cpfInput.value;
+
+      cpfValue = cpfValue.replace(/\D/g, '');
+      cpfValue = cpfValue.replace(/(\d{3})(\d)/, '$1.$2');
+      cpfValue = cpfValue.replace(/(\d{3})(\d)/, '$1.$2');
+      cpfValue = cpfValue.replace(/(\d{3})(\d)/, '$1-$2');
+
+      cpfInput.value = cpfValue;
+
+      cpfInput.addEventListener('change', () => {
+        if (cpfInput.value.length !== 14) {
+          usersText.style.color = 'var(--secondary-1)';
+          usersText.textContent = 'Por favor, insira um CPF válido.';
+          return;
+        } else {
+          usersText.style.color = 'var(--black-1)';
+          usersText.textContent = 'Faça login para acessar seus dados!';
+        }
+      });
+
+      passwordInput.addEventListener('change', () => {
+        if (passwordInput.value.length < 8) {
+          usersText.style.color = 'var(--secondary-1)';
+          usersText.textContent = 'Por favor, insira uma senha entre 8 e 20 caracteres.';
+        } else {
+          usersText.style.color = 'var(--black-1)';
+          usersText.textContent = 'Faça login para acessar seus dados!';
+        }
+      });
+    }
+
     submitButton.addEventListener('click', login);
     togglePasswordButton.addEventListener('click', togglePasswordVisibility);
     modal.addEventListener('click', closeModal);
+
+    inputs.forEach((input) => {
+      input.addEventListener('input', validateInputs);
+    });
   }
 }
