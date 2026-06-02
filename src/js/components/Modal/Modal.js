@@ -63,7 +63,7 @@ export function initModal() {
     passwordInput &&
     openedEyeIcon &&
     closedEyeIcon &&
-    cpf
+    cpfInput
   ) {
     let isLogged = false;
 
@@ -106,12 +106,13 @@ export function initModal() {
 
     function login(event) {
       event.preventDefault();
+
       let allFields = true;
+      const cpfData = cpfInput.value.replace(/\D/g, '');
 
       inputs.forEach((input) => {
         if (input.value.trim() === '') {
           allFields = false;
-          return;
         }
       });
 
@@ -119,9 +120,13 @@ export function initModal() {
         usersText.style.color = 'var(--secondary-1)';
         usersText.textContent = 'Por favor, preencha todos os campos.';
         return;
-      } else if (allFields && passwordInput.value.length < 8) {
+      } else if (passwordInput.value.length < 8) {
         usersText.style.color = 'var(--secondary-1)';
         usersText.textContent = 'Por favor, insira uma senha entre 8 e 20 caracteres.';
+        return;
+      } else if (cpfData.length !== 11) {
+        usersText.style.color = 'var(--secondary-1)';
+        usersText.textContent = 'Por favor, insira um CPF válido.';
         return;
       }
 
@@ -137,7 +142,7 @@ export function initModal() {
       }, 1500);
     }
 
-    function validateInputs() {
+    function maskCpf() {
       let cpfValue = cpfInput.value;
 
       cpfValue = cpfValue.replace(/\D/g, '');
@@ -146,35 +151,11 @@ export function initModal() {
       cpfValue = cpfValue.replace(/(\d{3})(\d)/, '$1-$2');
 
       cpfInput.value = cpfValue;
-
-      cpfInput.addEventListener('change', () => {
-        if (cpfInput.value.length !== 14) {
-          usersText.style.color = 'var(--secondary-1)';
-          usersText.textContent = 'Por favor, insira um CPF válido.';
-          return;
-        } else {
-          usersText.style.color = 'var(--black-1)';
-          usersText.textContent = 'Faça login para acessar seus dados!';
-        }
-      });
-
-      passwordInput.addEventListener('change', () => {
-        if (passwordInput.value.length < 8) {
-          usersText.style.color = 'var(--secondary-1)';
-          usersText.textContent = 'Por favor, insira uma senha entre 8 e 20 caracteres.';
-        } else {
-          usersText.style.color = 'var(--black-1)';
-          usersText.textContent = 'Faça login para acessar seus dados!';
-        }
-      });
     }
 
     submitButton.addEventListener('click', login);
     togglePasswordButton.addEventListener('click', togglePasswordVisibility);
     modal.addEventListener('click', closeModal);
-
-    inputs.forEach((input) => {
-      input.addEventListener('input', validateInputs);
-    });
+    cpfInput.addEventListener('input', maskCpf);
   }
 }
