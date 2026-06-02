@@ -12,6 +12,9 @@ export function Header() {
         <button class="header-button" aria-expanded="false">MENU<span class="header-button-symbol">☰</span></button>
       </div>
         <ul class="header-list">
+          <li>
+            <button id="close-header-button">X</button>
+          </li>
           <li><a class="header-link" href="#animals">ANIMAIS</a></li>
           <li><a class="header-link" href="#about">SOBRE</a></li>
 
@@ -32,6 +35,8 @@ export function Header() {
         </ul>
       </nav>
     </div>
+
+    <div class="menu-overlay"></div>
   `;
 }
 
@@ -75,14 +80,16 @@ export function initMobileMenu() {
   const headerButton = document.querySelector('.header-button');
   const symbol = headerButton.querySelector('.header-button-symbol');
   const headerList = document.querySelector('.header-list');
+  const closeButton = document.getElementById('close-header-button');
+  const menuOverlay = document.querySelector('.menu-overlay');
 
-  if (headerButton && symbol && headerList) {
+  if (headerButton && symbol && headerList && closeButton) {
     function manipulateMobileMenu() {
       const headerListElements = headerList.querySelectorAll('*');
       const headerListLinks = headerList.querySelectorAll('a');
       const ariaExpanded = headerButton.getAttribute('aria-expanded');
 
-      if (headerListElements.length && headerListLinks && ariaExpanded) {
+      if (headerListElements.length && headerListLinks.length && ariaExpanded) {
         if (ariaExpanded === 'false') {
           headerButton.setAttribute('aria-expanded', 'true');
         } else {
@@ -96,13 +103,21 @@ export function initMobileMenu() {
           element.classList.toggle('mobile');
         });
 
+        menuOverlay.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+
         function closeMobileMenu(event) {
-          if (!headerList.contains(event.target) && !headerButton.contains(event.target)) {
+          if (
+            (!headerList.contains(event.target) && !headerButton.contains(event.target)) ||
+            closeButton.contains(event.target)
+          ) {
             event.stopPropagation(); // Impossibilita a propagação do bubble, evitando que o clique suba para o HTML
 
             headerList.classList.remove('mobile');
             symbol.classList.remove('mobile');
             headerButton.setAttribute('aria-expanded', 'false');
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
 
             headerListElements.forEach((element) => {
               element.classList.remove('mobile');
@@ -117,6 +132,8 @@ export function initMobileMenu() {
             headerList.classList.remove('mobile');
             symbol.classList.remove('mobile');
             headerButton.setAttribute('aria-expanded', 'false');
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
 
             headerListElements.forEach((element) => {
               element.classList.remove('mobile');
@@ -135,6 +152,8 @@ export function initMobileMenu() {
             headerList.classList.remove('mobile');
             symbol.classList.remove('mobile');
             headerButton.setAttribute('aria-expanded', 'false');
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
 
             headerListElements.forEach((element) => {
               element.classList.remove('mobile');

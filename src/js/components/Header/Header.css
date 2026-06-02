@@ -43,6 +43,10 @@
     gap 0.5s ease;
 }
 
+#close-header-button {
+  display: none;
+}
+
 .dropdown {
   position: relative;
 }
@@ -88,7 +92,7 @@
 }
 
 .dropdown-list::before {
-  content: "▲";
+  content: '▲';
   position: absolute;
   color: var(--black-1);
   top: -21px;
@@ -96,7 +100,7 @@
 }
 
 .dropdown-list.mobile::before {
-  content: "▲";
+  content: '▲';
   position: absolute;
   color: var(--black-1);
   top: -20px;
@@ -173,9 +177,20 @@
     padding: 20px 40px;
   }
 
+  #close-header-button {
+    display: block;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: var(--primary-1);
+    font: var(--details-font-xs);
+    position: fixed;
+    top: 20px;
+    right: 10px;
+  }
+
   .header-list {
     display: flex;
-    position: absolute;
+    position: fixed;
     background-color: var(--primary-2);
     max-width: 190px;
     width: 100%;
@@ -194,6 +209,10 @@
       opacity 0.5s ease,
       transform 0.5s ease,
       visibility 0s linear 0.5s;
+
+    top: 0px;
+    right: 0px;
+    padding-top: 30px;
   }
 
   .header-button {
@@ -205,6 +224,10 @@
     visibility: visible;
     pointer-events: auto;
     transition-delay: 0s;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    padding-top: 30px;
   }
 
   .header-mobile {
@@ -226,7 +249,7 @@
   }
 
   .dropdown-list::before {
-    content: "▲";
+    content: '▲';
     position: absolute;
     color: var(--black-1);
     top: -20px;
@@ -241,6 +264,29 @@
     width: 55px;
     height: 35px;
   }
+
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.5s ease,
+      visibility 0.5s ease;
+    z-index: 90;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 }
 
 @media (max-width: 480px) {
@@ -253,10 +299,6 @@
 
   .header-mobile {
     flex-direction: column;
-  }
-
-  .header-list {
-    right: 30px;
   }
 
   .header-mobile-left {
