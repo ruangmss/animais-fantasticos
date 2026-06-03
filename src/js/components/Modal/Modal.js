@@ -67,21 +67,6 @@ export function initModal() {
   ) {
     let isLogged = false;
 
-    loginButton.addEventListener('click', () => {
-      if (!isLogged) {
-        usersText.style.color = 'var(--black-1)';
-        usersText.textContent = 'Faça login para acessar seus dados!';
-      }
-      modal.showModal();
-    });
-
-    closeButton.addEventListener('click', () => {
-      modal.close();
-      if (submitButton.style.display !== 'none') {
-        form.reset();
-      }
-    });
-
     function togglePasswordVisibility() {
       const type = passwordInput.getAttribute('type');
       if (type === 'password') {
@@ -98,7 +83,7 @@ export function initModal() {
     function closeModal(event) {
       if (event.target === modal) {
         modal.close();
-        if (submitButton.style.display !== 'none') {
+        if (!isLogged) {
           form.reset();
         }
       }
@@ -152,6 +137,21 @@ export function initModal() {
 
       cpfInput.value = cpfValue;
     }
+
+    loginButton.addEventListener('click', () => {
+      if (!isLogged) {
+        usersText.style.color = 'var(--black-1)';
+        usersText.textContent = 'Faça login para acessar seus dados!';
+      }
+      modal.showModal();
+    });
+
+    closeButton.addEventListener('click', () => {
+      modal.close();
+      if (!isLogged) {
+        form.reset();
+      }
+    });
 
     submitButton.addEventListener('click', login);
     togglePasswordButton.addEventListener('click', togglePasswordVisibility);
