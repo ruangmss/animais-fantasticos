@@ -44,7 +44,7 @@
   transition: min-width 0.5s ease;
 }
 
-#operation::after {
+#operation span {
   content: '';
   border-radius: 50%;
   min-width: 0.75rem;
@@ -54,12 +54,22 @@
   transition: background-color 2s ease;
 }
 
-#operation.opened::after {
+#operation.opened span {
   background-color: var(--green);
 }
 
-#operation.closed::after {
+#operation.closed span {
   background-color: var(--red);
+}
+
+.tooltip {
+  background-color: var(--primary-transparent);
+  max-width: max-content;
+  padding: 5px;
+  font: var(--details-font-xs);
+  font-size: 0.75rem;
+  border: 2px solid var(--black-1);
+  position: fixed;
 }
 
 .contact-data a {

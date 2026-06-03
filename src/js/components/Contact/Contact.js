@@ -16,7 +16,7 @@ export function Contact() {
             <li><a href=tel:99999999999>(99) 99999-9999</a></li>
             <li><a href="https://maps.app.goo.gl/fkhqaT9xKc6WnQcTA" target="_blank" rel="noopener noreferrer">Itajaí - SC</a></li>
             <li><a href="https://maps.app.goo.gl/djBvssAAvGZA6EUY7" target="_blank" rel="noopener noreferrer">Rua Fictícia, 123</a></li>
-            <li id="operation">De segunda a sexta, das 08:00 às 18:00</li>
+            <li id="operation">De segunda a sexta, das 08:00 às 18:00 <span id="business-hours-status"></span></li>
           </ul>
         </div> 
       </div>
@@ -42,5 +42,30 @@ export function initBusinessHours() {
       operation.classList.remove('opened');
       operation.classList.add('closed');
     }
+  }
+}
+
+export function initTooltip() {
+  const contactData = document.querySelector('.contact-data');
+  const operationStatus = document.getElementById('business-hours-status');
+
+  if (contactData && operationStatus) {
+    const tooltip = document.createElement('div');
+    tooltip.classList.add('tooltip');
+
+    function showTooltip(event) {
+      contactData.appendChild(tooltip);
+      tooltip.style.display = 'block';
+      tooltip.textContent = 'Estamos abertos!';
+      tooltip.style.left = `${event.clientX}px`;
+      tooltip.style.top = `${event.clientY}px`;
+    }
+
+    function closeTooltip() {
+      tooltip.style.display = 'none';
+    }
+
+    operationStatus.addEventListener('mouseenter', showTooltip);
+    operationStatus.addEventListener('mouseleave', closeTooltip);
   }
 }
