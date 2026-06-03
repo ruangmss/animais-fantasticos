@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --entry ./src/js/main-src.js --output-path ./src/js --output-filename main.js --mode production --watch"
+    "watch": "webpack --entry ./src/js/main-src.js --output-path ./src/js --output-filename main.js --mode development --watch",
+    "build": "webpack --entry ./src/js/main-src.js --output-path ./src/js --output-filename main.js --mode production"
   },
   "repository": {
     "type": "git",
