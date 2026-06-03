@@ -83,8 +83,11 @@ export function initModal() {
     function closeModal(event) {
       if (event.target === modal) {
         modal.close();
+        document.body.classList.remove('opened-menu');
         if (!isLogged) {
-          form.reset();
+          setTimeout(() => {
+            form.reset();
+          }, 500);
         }
       }
     }
@@ -124,6 +127,7 @@ export function initModal() {
       });
       setTimeout(() => {
         modal.close();
+        document.body.classList.remove('opened-menu');
       }, 1500);
     }
 
@@ -143,13 +147,17 @@ export function initModal() {
         usersText.style.color = 'var(--black-1)';
         usersText.textContent = 'Faça login para acessar seus dados!';
       }
+      document.body.classList.add('opened-menu');
       modal.showModal();
     });
 
     closeButton.addEventListener('click', () => {
       modal.close();
+      document.body.classList.remove('opened-menu');
       if (!isLogged) {
-        form.reset();
+        setTimeout(() => {
+          form.reset();
+        }, 500);
       }
     });
 

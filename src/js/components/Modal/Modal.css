@@ -99,6 +99,10 @@
     color 0.5s ease;
 }
 
+body.opened-menu {
+  overflow: hidden;
+}
+
 @media (max-width: 768px) {
   .modal {
     max-width: 80%;
