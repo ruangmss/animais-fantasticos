@@ -22,7 +22,7 @@ O projeto utiliza uma estética de "catálogo científico", através de sua tipo
 
 ---
 
-👤 Desenvolvedor
+## 👤 Desenvolvedor
 
 Projeto desenvolvido por [Ruan Gomes] sob a orientação do curso da Origamid.
 
