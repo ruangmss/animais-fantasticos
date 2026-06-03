@@ -2,7 +2,7 @@
 
 Este é um projeto desenvolvido durante o curso de **JavaScript Completo ES6+** da **Origamid**. O objetivo principal foi construir um site interativo, aplicando conceitos avançados de manipulação do DOM e lógica de programação.
 
-> **Nota:** Este é um sistema fictício criado exclusivamente para fins didáticos e para aprimorar minhas habilidades como desenvolvedor Front-end.
+> **Nota:** Este é um sistema fictício criado exclusivamente para fins didáticos e para aprimorar minhas habilidades como desenvolvedor web.
 
 ---
 
@@ -23,6 +23,7 @@ O projeto utiliza uma estética de "catálogo científico", através de sua tipo
 ---
 
 👤 Desenvolvedor
+
 Projeto desenvolvido por [Ruan Gomes] sob a orientação do curso da Origamid.
 
 “O aprendizado contínuo é o que transforma curiosidade em maestria.”
