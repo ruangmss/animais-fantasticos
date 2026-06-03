@@ -12,9 +12,7 @@ export function Header() {
         <button class="header-button" aria-expanded="false">MENU<span class="header-button-symbol">☰</span></button>
       </div>
         <ul class="header-list">
-          <li>
-            <button id="close-header-button">X</button>
-          </li>
+          <button id="close-header-button">X</button>
           <li><a class="header-link" href="#animals">ANIMAIS</a></li>
           <li><a class="header-link" href="#about">SOBRE</a></li>
 
