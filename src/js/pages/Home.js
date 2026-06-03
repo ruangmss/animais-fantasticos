@@ -1,4 +1,4 @@
-import { Header, initDropDownMenu, initMobileMenu } from '../components/Header/Header.js';
+import { Header, initDropdownMenu, initMobileMenu } from '../components/Header/Header.js';
 import { Footer } from '../components/Footer/Footer.js';
 import { Animals, initTabMenu } from '../components/Animals/Animals.js';
 import {
@@ -20,13 +20,27 @@ export function Home() {
     header.innerHTML = Header();
     footer.innerHTML = Footer();
     app.innerHTML = Animals() + About() + FrequentlyAskedQuestions() + Numbers() + Contact() + Modal();
-    initTabMenu();
-    initDropDownMenu();
+
+    // Funções referentes ao header
+    initDropdownMenu();
     initMobileMenu();
+
+    // Função referente à seção FAQ
     initAccordionList();
+
+    // Função geral de exibição dinâmica de seções/elementos
     initSmoothReveal();
+
+    // Função referente ao elemento Modal
     initModal();
+
+    // Função referente à seção Animais
+    initTabMenu();
+
+    // Função referente à seção Números
     initFetchAnimals();
+
+    // Função referente à seção Contato
     initBusinessHours();
   }
 }

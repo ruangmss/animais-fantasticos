@@ -38,7 +38,7 @@ export function Header() {
   `;
 }
 
-export function initDropDownMenu() {
+export function initDropdownMenu() {
   const dropdownMenus = document.querySelectorAll('.dropdown');
 
   if (dropdownMenus.length) {
