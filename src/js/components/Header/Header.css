@@ -279,7 +279,7 @@
   }
 
   body.menu-open {
-    overflow: hidden;
+    overflow: hidden; /* Impede rolagem, tendo em vista que ela é um "overflow" */
   }
 
   .menu-overlay.active {
