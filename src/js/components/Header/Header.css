@@ -92,7 +92,7 @@
 }
 
 .dropdown-list::before {
-  content: '▲';
+  content: "▲";
   position: absolute;
   color: var(--black-1);
   top: -21px;
@@ -100,7 +100,7 @@
 }
 
 .dropdown-list.mobile::before {
-  content: '▲';
+  content: "▲";
   position: absolute;
   color: var(--black-1);
   top: -20px;
@@ -179,13 +179,13 @@
 
   #close-header-button {
     display: block;
-    padding: 5px 10px;
-    border-radius: 50%;
+    padding: 3px 8px;
     background-color: var(--primary-1);
     font: var(--details-font-xs);
     position: fixed;
     top: 20px;
     right: 10px;
+    text-align: center;
   }
 
   .header-list {
@@ -249,7 +249,7 @@
   }
 
   .dropdown-list::before {
-    content: '▲';
+    content: "▲";
     position: absolute;
     color: var(--black-1);
     top: -20px;
