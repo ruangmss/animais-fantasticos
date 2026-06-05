@@ -37,7 +37,7 @@
 
 .contact-data a::before,
 #operation::before {
-  content: '';
+  content: "";
   min-height: 0.5rem;
   min-width: 1.5rem;
   background-color: var(--primary-2);
@@ -45,7 +45,7 @@
 }
 
 #operation span {
-  content: '';
+  content: "";
   border-radius: 50%;
   min-width: 0.75rem;
   min-height: 0.75rem;
@@ -70,6 +70,16 @@
   font-size: 0.75rem;
   border: 2px solid var(--black-1);
   position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.tooltip.visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .contact-data a {

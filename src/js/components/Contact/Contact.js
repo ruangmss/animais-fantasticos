@@ -30,42 +30,47 @@ export function initBusinessHours() {
   const now = new Date();
   const currentDay = now.getDay();
   const currentHour = now.getHours();
-  const operation = document.querySelector('#operation');
+  const operation = document.querySelector("#operation");
   const matchDay = businessDays.indexOf(currentDay) >= 0 ? true : false;
-  const matchHour = currentHour >= businessHours[0] && currentHour <= businessHours[1];
+  const matchHour =
+    currentHour >= businessHours[0] && currentHour <= businessHours[1];
+  const contactData = document.querySelector(".contact-data");
+  const operationStatus = document.getElementById("business-hours-status");
+  let isOpened = true;
 
-  if (operation) {
+  if (operation && contactData && operationStatus) {
     if (matchDay && matchHour) {
-      operation.classList.remove('closed');
-      operation.classList.add('opened');
+      operation.classList.remove("closed");
+      operation.classList.add("opened");
+      isOpened = true;
     } else {
-      operation.classList.remove('opened');
-      operation.classList.add('closed');
+      operation.classList.remove("opened");
+      operation.classList.add("closed");
+      isOpened = false;
     }
-  }
-}
 
-export function initTooltip() {
-  const contactData = document.querySelector('.contact-data');
-  const operationStatus = document.getElementById('business-hours-status');
-
-  if (contactData && operationStatus) {
-    const tooltip = document.createElement('div');
-    tooltip.classList.add('tooltip');
+    const tooltip = document.createElement("div");
+    tooltip.classList.add("tooltip");
 
     function showTooltip(event) {
       contactData.appendChild(tooltip);
-      tooltip.style.display = 'block';
-      tooltip.textContent = 'Estamos abertos!';
+      tooltip.classList.add("visible");
+
+      if (isOpened) {
+        tooltip.textContent = "Estamos abertos!";
+      } else {
+        tooltip.textContent = "Estamos fechados.";
+      }
+
       tooltip.style.left = `${event.clientX}px`;
-      tooltip.style.top = `${event.clientY}px`;
+      tooltip.style.top = `${event.clientY - 35}px`;
     }
 
     function closeTooltip() {
-      tooltip.style.display = 'none';
+      tooltip.classList.remove("visible");
     }
 
-    operationStatus.addEventListener('mouseenter', showTooltip);
-    operationStatus.addEventListener('mouseleave', closeTooltip);
+    operationStatus.addEventListener("mousemove", showTooltip);
+    operationStatus.addEventListener("mouseleave", closeTooltip);
   }
 }
