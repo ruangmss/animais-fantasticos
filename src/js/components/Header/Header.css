@@ -186,6 +186,7 @@
     top: 20px;
     right: 10px;
     text-align: center;
+    transition: color 0.5s ease;
   }
 
   .header-list {
@@ -317,6 +318,10 @@
 
   #login:hover {
     gap: 12.5px;
+  }
+
+  #close-header-button:hover {
+    color: var(--secondary-1);
   }
 
   .dropdown:hover .dropdown-list {
