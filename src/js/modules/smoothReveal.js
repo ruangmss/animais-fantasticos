@@ -4,8 +4,14 @@ export function initSmoothReveal() {
   if (elementsToScroll.length) {
     function smoothReveal() {
       elementsToScroll.forEach((element) => {
+        let imaginaryLine = 0;
+
         const elementTop = element.getBoundingClientRect().top;
-        const imaginaryLine = window.innerHeight * 0.9; // Quando o elemento chega em 90% de distância do topo da tela é exibido, ou seja, numa linha imáginária 10% acima da borda inferior visível
+        if (element.classList.contains('footer-bg')) {
+          imaginaryLine = window.innerHeight * 1;
+        } else {
+          imaginaryLine = window.innerHeight * 0.9; // Quando o elemento chega em 90% de distância do topo da tela é exibido, ou seja, numa linha imáginária 10% acima da borda inferior visível
+        }
 
         if (elementTop <= imaginaryLine) {
           element.classList.add('visible');
