@@ -8,7 +8,7 @@ export function initSmoothReveal() {
 
         const elementTop = element.getBoundingClientRect().top;
         if (element.classList.contains('footer-bg')) {
-          imaginaryLine = window.innerHeight * 1;
+          imaginaryLine = window.innerHeight * 0.97;
         } else {
           imaginaryLine = window.innerHeight * 0.9; // Quando o elemento chega em 90% de distância do topo da tela é exibido, ou seja, numa linha imáginária 10% acima da borda inferior visível
         }
