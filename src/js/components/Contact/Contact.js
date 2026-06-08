@@ -62,7 +62,11 @@ export function initBusinessHours() {
         tooltip.textContent = 'Estamos fechados.';
       }
 
-      tooltip.style.left = `${event.clientX}px`;
+      if (event.clientX + 150 >= window.innerWidth) {
+        tooltip.style.left = `${event.clientX - 100}px`;
+      } else {
+        tooltip.style.left = `${event.clientX}px`;
+      }
       tooltip.style.top = `${event.clientY - 35}px`;
     }
 
