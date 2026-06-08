@@ -67,6 +67,7 @@ export function initBusinessHours() {
       } else {
         tooltip.style.left = `${event.clientX}px`;
       }
+
       tooltip.style.top = `${event.clientY - 35}px`;
     }
 

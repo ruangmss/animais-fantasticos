@@ -73,7 +73,7 @@ export function initFetchAnimals() {
         initNumbersAnimation(); // Chama a animação apenas após o fetch, pois ela estava ocorrendo antes de já haver dados, operando incorretamente
       }
     } catch (error) {
-      console.log('Erro: ', error);
+      console.error(error);
     }
   }
   fetchAnimals('/src/js/services/api.json');
