@@ -65,7 +65,7 @@ export function initDropdownMenu() {
         function closeDropdown(event) {
           if (!dropdown.contains(event.target)) {
             dropdownList.classList.remove('active');
-            document.removeEventListener('click', closeDropdown); // Quando o dropdown é fechado, seu listener do HTML é removido para que não ocorra leak
+            document.removeEventListener('click', closeDropdown); // Quando o dropdown é fechado, seu listener é removido
           }
         }
         document.addEventListener('click', closeDropdown);
@@ -81,7 +81,7 @@ export function initMobileMenu() {
   const closeButton = document.getElementById('close-header-button');
   const menuOverlay = document.querySelector('.menu-overlay');
 
-  if (headerButton && symbol && headerList && closeButton) {
+  if (headerButton && symbol && headerList && closeButton && menuOverlay) {
     function manipulateMobileMenu() {
       const headerListElements = headerList.querySelectorAll('*');
       const headerListLinks = headerList.querySelectorAll('a');
