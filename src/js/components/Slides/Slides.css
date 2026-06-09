@@ -1,0 +1,13 @@
+.slides {
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  gap: 30px;
+}
+
+.slides li {
+  width: 70%;
+  flex-shrink: 0;
+}

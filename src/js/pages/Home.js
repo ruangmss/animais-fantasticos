@@ -10,6 +10,7 @@ import { Contact, initBusinessHours, initTooltip } from '../components/Contact/C
 import { initSmoothReveal } from '../modules/smoothReveal.js';
 import { Modal, initModal } from '../components/Modal/Modal.js';
 import { Numbers, initFetchAnimals } from '../components/Numbers/Numbers.js';
+import { Slides, initSlidesManipulation } from '../components/Slides/Slides.js';
 
 export function Home() {
   let header = document.getElementById('header');
@@ -19,7 +20,7 @@ export function Home() {
   if (header && footer && app) {
     header.innerHTML = Header();
     footer.innerHTML = Footer();
-    app.innerHTML = Animals() + About() + FrequentlyAskedQuestions() + Numbers() + Contact() + Modal();
+    app.innerHTML = Animals() + About() + FrequentlyAskedQuestions() + Numbers() + Slides() + Contact() + Modal();
 
     // Funções referentes ao header
     initDropdownMenu();
