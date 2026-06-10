@@ -5,6 +5,7 @@
 .slides-list {
   display: flex;
   gap: 50px;
+  transition: transform 0.2s ease;
 }
 
 .slides-list li {

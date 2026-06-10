@@ -21,12 +21,54 @@ export function Slides() {
 export function initMousedownManipulation() {
   const slidesContainer = document.querySelector('.slides');
   const slidesList = document.querySelector('.slides-list');
+  const slides = slidesList.querySelectorAll('li');
+  slides[0].classList.add('active');
 
-  if (slidesContainer && slidesList) {
+  if (slidesContainer && slidesList && slides.length) {
     const distance = { startX: 0, currentX: 0, finalPosition: 0 };
+
+    function activeSlide(position) {
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        const slideCenter = slide.offsetLeft + slide.offsetWidth / 2 + position;
+        const containerCenter = slidesContainer.offsetWidth / 2;
+
+        if (
+          slideCenter > containerCenter - slide.offsetWidth / 2 &&
+          slideCenter < containerCenter + slide.offsetWidth / 2
+        ) {
+          slide.classList.add('active');
+        }
+      });
+    }
 
     function moveSlide(position) {
       slidesList.style.transform = `translate3d(${position}px, 0, 0)`;
+      activeSlide(position);
+    }
+
+    function positionActiveSlide() {
+      const activeSlide = slidesList.querySelector('.active');
+
+      if (activeSlide) {
+        let position = 0;
+
+        if (activeSlide === slides[0]) {
+          position = 0;
+        } else if (activeSlide === slides[slides.length - 1]) {
+          position = slidesContainer.offsetWidth - slidesList.scrollWidth;
+        } else {
+          const containerCenter = slidesContainer.offsetWidth / 2;
+
+          const activeCenter = activeSlide.offsetLeft + activeSlide.offsetWidth / 2 + distance.finalPosition;
+
+          position = distance.finalPosition + (containerCenter - activeCenter);
+        }
+
+        moveSlide(position);
+        distance.finalPosition = position;
+      }
     }
 
     function onMove(event) {
@@ -58,6 +100,8 @@ export function initMousedownManipulation() {
       }
 
       moveSlide(distance.finalPosition); // Chama novamente para garantir que os limites não serão ultrapassados
+      activeSlide(distance.finalPosition); // Ativa o slide
+      positionActiveSlide(); // Centraliza o slide
 
       window.removeEventListener('mousemove', onMove);
       window.removeEventListener('mouseup', onEnd);
