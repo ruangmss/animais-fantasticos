@@ -6,11 +6,11 @@ import {
   initAccordionList,
 } from '../components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.js';
 import { About } from '../components/About/About.js';
-import { Contact, initBusinessHours, initTooltip } from '../components/Contact/Contact.js';
+import { Contact, initBusinessHours } from '../components/Contact/Contact.js';
 import { initSmoothReveal } from '../modules/smoothReveal.js';
 import { Modal, initModal } from '../components/Modal/Modal.js';
 import { Numbers, initFetchAnimals } from '../components/Numbers/Numbers.js';
-import { Slides, initSlidesManipulation } from '../components/Slides/Slides.js';
+import { Slides, initMousedownManipulation } from '../components/Slides/Slides.js';
 
 export function Home() {
   let header = document.getElementById('header');
@@ -43,6 +43,8 @@ export function Home() {
 
     // Função referente à seção Contato
     initBusinessHours();
-    initTooltip();
+
+    // Função referente à seção Galeria
+    initMousedownManipulation();
   }
 }
