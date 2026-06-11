@@ -37,7 +37,7 @@
 
 .contact-data a::before,
 #operation::before {
-  content: "";
+  content: '';
   min-height: 0.5rem;
   min-width: 1.5rem;
   background-color: var(--primary-2);
@@ -45,7 +45,7 @@
 }
 
 #operation span {
-  content: "";
+  content: '';
   border-radius: 50%;
   min-width: 0.75rem;
   min-height: 0.75rem;
@@ -104,6 +104,11 @@
   .contact-content {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .contact-data a,
+  #operation {
+    font: var(--details-font-xs);
   }
 
   .contact-map iframe {
