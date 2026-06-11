@@ -41,6 +41,7 @@ export function Header() {
 
 export function initDropdownMenu() {
   const dropdownMenus = document.querySelectorAll('.dropdown');
+  const answers = document.querySelectorAll('.answer');
   let activeDropdown = null;
 
   function closeDropdown(event) {
@@ -60,7 +61,24 @@ export function initDropdownMenu() {
 
   if (dropdownMenus.length) {
     dropdownMenus.forEach((dropdown) => {
+      const dropdownList = dropdown.querySelector('.dropdown-list');
+      const insideDropdownList = dropdownList ? dropdownList.querySelectorAll('a') : [];
+
       dropdown.addEventListener('click', manipulateDropdown);
+
+      insideDropdownList.forEach((link, index) => {
+        link.addEventListener('click', () => {
+          if (!answers[index]) {
+            return;
+          }
+
+          answers.forEach((answer) => {
+            answer.classList.remove('visible');
+          });
+
+          answers[index].classList.add('visible');
+        });
+      });
     });
 
     function manipulateDropdown(event) {
@@ -70,9 +88,8 @@ export function initDropdownMenu() {
 
       const dropdown = event.currentTarget;
       const dropdownList = dropdown.querySelector('.dropdown-list');
-      const insideDropdownList = dropdownList ? dropdownList.querySelectorAll('a') : [];
 
-      if (dropdown && dropdownList && insideDropdownList.length) {
+      if (dropdown && dropdownList) {
         if (!dropdownList.contains(event.target)) {
           event.preventDefault();
         }
