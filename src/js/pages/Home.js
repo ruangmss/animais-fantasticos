@@ -1,5 +1,5 @@
 import { Header, initDropdownMenu, initMobileMenu } from '../components/Header/Header.js';
-import { Footer } from '../components/Footer/Footer.js';
+import { Footer, initCurrentYear } from '../components/Footer/Footer.js';
 import { Animals, initTabMenu } from '../components/Animals/Animals.js';
 import {
   FrequentlyAskedQuestions,
@@ -46,5 +46,8 @@ export function Home() {
 
     // Função referente à seção Galeria
     initMousedownManipulation();
+
+    // Função referente ao footer
+    initCurrentYear();
   }
 }
