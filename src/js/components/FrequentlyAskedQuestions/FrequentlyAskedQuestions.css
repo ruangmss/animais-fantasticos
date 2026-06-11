@@ -20,14 +20,14 @@
   max-width: max-content;
 }
 
-.question dt {
+.question span {
   display: flex;
   gap: 10px;
   align-items: center;
   text-align: start;
 }
 
-.question dt span {
+.question span span {
   transition: transform 0.5s ease;
 }
 
@@ -58,7 +58,7 @@
 }
 
 /* Verifica se o elemento imediataente depois é .answer.visible para aplicar a rotação*/
-.question:has(+ .answer.visible) span {
+.question:has(+ .answer.visible) span span {
   transform: rotate(180deg);
 }
 
@@ -71,7 +71,7 @@
     display: none;
   }
 
-  .question dt span {
+  .question span span {
     order: -1;
   }
 }
