@@ -18,6 +18,14 @@
   transition: color 0.5s ease;
 }
 
+@media (max-width: 768px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
 @media (hover: hover) {
   .about-content strong:hover {
     color: var(--secondary-1);

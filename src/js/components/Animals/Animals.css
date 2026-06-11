@@ -85,6 +85,10 @@
 }
 
 @media (max-width: 768px) {
+  .animals {
+    gap: 20px;
+  }
+
   .animals-title {
     font: var(--title-font);
   }

@@ -63,6 +63,10 @@
 }
 
 @media (max-width: 768px) {
+  .faq {
+    gap: 20px;
+  }
+
   .question::before {
     display: none;
   }

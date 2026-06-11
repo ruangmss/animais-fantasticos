@@ -39,6 +39,12 @@
   gap: 10px;
 }
 
+@media (max-width: 768px) {
+  .numbers {
+    gap: 20px;
+  }
+}
+
 @media (max-width: 480px) {
   .numbers-content {
     flex-direction: column;

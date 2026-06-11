@@ -58,6 +58,10 @@
 }
 
 @media (max-width: 768px) {
+  .slides {
+    gap: 20px;
+  }
+
   .slides-list {
     gap: 20px;
   }
