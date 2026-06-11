@@ -7,12 +7,12 @@ export function Animals() {
 
       <div class="animals-content">
         <nav class="animals-images">
-          <button type="button"><img src="/src/assets/images/fox.webp" alt="Raposa"/></button>
-          <button type="button"><img src="/src/assets/images/squirrel.webp" alt="Esquilo"/></button>
-          <button type="button"><img src="/src/assets/images/bear.webp" alt="Urso"/></button>
-          <button type="button"><img src="/src/assets/images/wolf.webp" alt="Lobo"/></button>
-          <button type="button"><img src="/src/assets/images/monkey.webp" alt="Macaco"/></button>
-          <button type="button"><img src="/src/assets/images/lion.webp" alt="Leão"/></button>
+          <button type="button"><img src="./src/assets/images/fox.webp" alt="Raposa"/></button>
+          <button type="button"><img src="./src/assets/images/squirrel.webp" alt="Esquilo"/></button>
+          <button type="button"><img src="./src/assets/images/bear.webp" alt="Urso"/></button>
+          <button type="button"><img src="./src/assets/images/wolf.webp" alt="Lobo"/></button>
+          <button type="button"><img src="./src/assets/images/monkey.webp" alt="Macaco"/></button>
+          <button type="button"><img src="./src/assets/images/lion.webp" alt="Leão"/></button>
         </nav>
 
         <div class="animals-texts">

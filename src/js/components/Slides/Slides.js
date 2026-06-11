@@ -7,12 +7,12 @@ export function Slides() {
 
       <div class="slides-viewport">
         <ul class="slides-list">
-          <li><img src="/src/assets/images/fox-slide.webp" alt="Raposa" draggable="false" /></li>
-          <li><img src="/src/assets/images/squirrel-slide.webp" alt="Esquilo" draggable="false" /></li>
-          <li><img src="/src/assets/images/bear-slide.webp" alt="Urso" draggable="false" /></li>
-          <li><img src="/src/assets/images/wolf-slide.webp" alt="Lobo" draggable="false" /></li>
-          <li><img src="/src/assets/images/monkey-slide.webp" alt="Macaco" draggable="false" /></li>
-          <li><img src="/src/assets/images/lion-slide.webp" alt="Leão" draggable="false" /></li>
+          <li><img src="./src/assets/images/fox-slide.webp" alt="Raposa" draggable="false" /></li>
+          <li><img src="./src/assets/images/squirrel-slide.webp" alt="Esquilo" draggable="false" /></li>
+          <li><img src="./src/assets/images/bear-slide.webp" alt="Urso" draggable="false" /></li>
+          <li><img src="./src/assets/images/wolf-slide.webp" alt="Lobo" draggable="false" /></li>
+          <li><img src="./src/assets/images/monkey-slide.webp" alt="Macaco" draggable="false" /></li>
+          <li><img src="./src/assets/images/lion-slide.webp" alt="Leão" draggable="false" /></li>
         </ul>
       </div>
 

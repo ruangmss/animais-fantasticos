@@ -76,5 +76,5 @@ export function initFetchAnimals() {
       console.error(error);
     }
   }
-  fetchAnimals('/src/js/services/api.json');
+  fetchAnimals('./src/js/services/api.json');
 }

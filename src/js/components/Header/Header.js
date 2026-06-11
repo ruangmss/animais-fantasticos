@@ -5,7 +5,7 @@ export function Header() {
       <div class="header-mobile">
 
         <div class="header-mobile-left">
-          <img src="/src/assets/images/logo.webp" alt="Raposa"/>
+          <img src="./src/assets/images/logo.webp" alt="Raposa"/>
           <span>Animais Fantásticos</span>
         </div>
 
