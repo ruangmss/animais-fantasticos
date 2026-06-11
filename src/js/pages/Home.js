@@ -46,8 +46,5 @@ export function Home() {
 
     // Função referente à seção Galeria
     initMousedownManipulation();
-
-    // Função referente ao footer
-    initCurrentYear();
   }
 }
