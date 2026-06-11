@@ -1,6 +1,6 @@
 [
   {
-    "icon": "/src/assets/icons/fox-icon.svg",
+    "icon": "./src/assets/icons/fox-icon.svg",
     "iconAlt": "Ícone de raposa",
     "species": "Raposas",
     "total": 516
