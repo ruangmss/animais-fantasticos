@@ -28,6 +28,7 @@ export function Header() {
           </li>
 
           <li><a class="header-link" href="#numbers">NÚMEROS</a></li>
+          <li><a class="header-link" href="#gallery">GALERIA</a></li>
           <li><a class="header-link" href="#contact">CONTATO</a></li>
           <li><a class="header-link" href="#" id="login">LOGIN<span>→</span></a></li>
         </ul>

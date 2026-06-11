@@ -1,6 +1,6 @@
 export function Slides() {
   return `
-    <section class="slides container scroll">
+    <section class="slides container scroll" id="gallery">
       <div class="slides-title">
         <h2>Galeria</h2>
       </div>
