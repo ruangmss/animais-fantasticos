@@ -1,5 +1,12 @@
 .slides {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.slides-title h2 {
+  font: var(--title-font);
 }
 
 .slides-list {
@@ -30,14 +37,31 @@
 }
 
 .slides-buttons {
-  align-self: center;
   display: flex;
-  justify-content: space-between;
-  margin-top: var(--margin-s);
+  gap: 15px;
 }
 
 .slides-buttons button {
   padding: 3px 7px;
-  background-color: var(--primary-1);
+  background-color: var(--primary-2);
   text-align: center;
+  transition: color 0.2s ease;
+}
+
+@media (max-width: 992px) {
+  .slides-list {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slides-list {
+    gap: 20px;
+  }
+}
+
+@media (hover: hover) {
+  .slides-buttons button:hover {
+    color: var(--secondary-1);
+  }
 }

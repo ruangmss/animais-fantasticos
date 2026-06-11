@@ -1,6 +1,10 @@
 export function Slides() {
   return `
     <section class="slides container scroll">
+      <div class="slides-title">
+        <h2>Galeria</h2>
+      </div>
+
       <ul class="slides-list">
        <li><img src="/src/assets/images/fox-slide.webp" alt="Raposa" draggable="false" /></li>
        <li><img src="/src/assets/images/squirrel-slide.webp" alt="Esquilo" draggable="false" /></li>
@@ -21,11 +25,18 @@ export function Slides() {
 export function initMousedownManipulation() {
   const slidesContainer = document.querySelector('.slides');
   const slidesList = document.querySelector('.slides-list');
-  const slides = slidesList.querySelectorAll('li');
-  slides[0].classList.add('active');
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
 
-  if (slidesContainer && slidesList && slides.length) {
+  if (slidesContainer && slidesList && prevButton && nextButton) {
     const distance = { startX: 0, currentX: 0, finalPosition: 0 };
+    const slides = slidesList.querySelectorAll('li');
+
+    if (!slides) {
+      return;
+    }
+
+    slides[0].classList.add('active');
 
     function activeSlide(position) {
       slides.forEach((slide) => {
@@ -100,8 +111,8 @@ export function initMousedownManipulation() {
       }
 
       moveSlide(distance.finalPosition); // Chama novamente para garantir que os limites não serão ultrapassados
-      activeSlide(distance.finalPosition); // Ativa o slide
       positionActiveSlide(); // Centraliza o slide
+      toggleButtonsVisibility();
 
       window.removeEventListener('mousemove', onMove);
       window.removeEventListener('mouseup', onEnd);
@@ -115,5 +126,60 @@ export function initMousedownManipulation() {
       window.addEventListener('mousemove', onMove); // Eventos adicionados ao window para que funcionem caso o usuário saia do container de slides com o evento ativo
       window.addEventListener('mouseup', onEnd); // Eventos adicionados ao window para que funcionem caso o usuário saia do container de slides com o evento ativo
     });
+
+    function setActiveSlide(index) {
+      if (index < 0 || index >= slides.length) {
+        return;
+      }
+
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+      });
+
+      slides[index].classList.add('active');
+
+      positionActiveSlide();
+      toggleButtonsVisibility();
+    }
+
+    slides.forEach((slide, index) => {
+      slide.addEventListener('click', () => {
+        setActiveSlide(index);
+      });
+    });
+
+    function getActiveIndex() {
+      const currentActive = slidesList.querySelector('.active');
+      return Array.from(slides).indexOf(currentActive);
+    }
+
+    function toggleButtonsVisibility() {
+      const activeIndex = getActiveIndex();
+
+      if (activeIndex === 0) {
+        prevButton.style.display = 'none';
+        nextButton.style.display = 'block';
+      } else if (activeIndex === slides.length - 1) {
+        prevButton.style.display = 'block';
+        nextButton.style.display = 'none';
+      } else {
+        prevButton.style.display = 'block';
+        nextButton.style.display = 'block';
+      }
+    }
+
+    // Lógica do botão de retorno
+    prevButton.addEventListener('click', () => {
+      const activeIndex = getActiveIndex();
+      setActiveSlide(activeIndex - 1);
+    });
+
+    // Lógica do botão de avanço
+    nextButton.addEventListener('click', () => {
+      const activeIndex = getActiveIndex();
+      setActiveSlide(activeIndex + 1);
+    });
+
+    toggleButtonsVisibility();
   }
 }
