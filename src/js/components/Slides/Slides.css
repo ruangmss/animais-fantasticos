@@ -1,5 +1,4 @@
 .slides {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -9,6 +8,11 @@
   font: var(--title-font);
 }
 
+.slides-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
 .slides-list {
   display: flex;
   gap: 50px;
@@ -16,13 +20,12 @@
 }
 
 .slides-list li {
-  flex-shrink: 0;
-  width: 60%;
+  flex: 0 0 60%;
   opacity: 0.8;
 
   transition:
-    width 0.3s ease,
-    opacity 0.3s ease;
+    opacity 0.3s ease,
+    flex 0.3s ease;
 }
 
 .slides-list li img {
@@ -32,8 +35,8 @@
 
 .slides-list li:hover,
 .slides-list li.active {
-  width: 65%;
   opacity: 1;
+  flex: 0 0 65%;
 }
 
 .slides-buttons {

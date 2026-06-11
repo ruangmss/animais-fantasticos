@@ -5,14 +5,16 @@ export function Slides() {
         <h2>Galeria</h2>
       </div>
 
-      <ul class="slides-list">
-       <li><img src="/src/assets/images/fox-slide.webp" alt="Raposa" draggable="false" /></li>
-       <li><img src="/src/assets/images/squirrel-slide.webp" alt="Esquilo" draggable="false" /></li>
-       <li><img src="/src/assets/images/bear-slide.webp" alt="Urso" draggable="false" /></li>
-       <li><img src="/src/assets/images/wolf-slide.webp" alt="Lobo" draggable="false" /></li>
-       <li><img src="/src/assets/images/monkey-slide.webp" alt="Macaco" draggable="false" /></li>
-       <li><img src="/src/assets/images/lion-slide.webp" alt="Leão" draggable="false" /></li>
-      </ul>
+      <div class="slides-viewport">
+        <ul class="slides-list">
+          <li><img src="/src/assets/images/fox-slide.webp" alt="Raposa" draggable="false" /></li>
+          <li><img src="/src/assets/images/squirrel-slide.webp" alt="Esquilo" draggable="false" /></li>
+          <li><img src="/src/assets/images/bear-slide.webp" alt="Urso" draggable="false" /></li>
+          <li><img src="/src/assets/images/wolf-slide.webp" alt="Lobo" draggable="false" /></li>
+          <li><img src="/src/assets/images/monkey-slide.webp" alt="Macaco" draggable="false" /></li>
+          <li><img src="/src/assets/images/lion-slide.webp" alt="Leão" draggable="false" /></li>
+        </ul>
+      </div>
 
       <div class="slides-buttons">
         <button id="prev" type="button">◀</button>
@@ -23,7 +25,7 @@ export function Slides() {
 }
 
 export function initMousedownManipulation() {
-  const slidesContainer = document.querySelector('.slides');
+  const slidesContainer = document.querySelector('.slides-viewport');
   const slidesList = document.querySelector('.slides-list');
   const prevButton = document.getElementById('prev');
   const nextButton = document.getElementById('next');
@@ -32,7 +34,7 @@ export function initMousedownManipulation() {
     const distance = { startX: 0, currentX: 0, finalPosition: 0 };
     const slides = slidesList.querySelectorAll('li');
 
-    if (!slides) {
+    if (!slides.length) {
       return;
     }
 
@@ -179,6 +181,8 @@ export function initMousedownManipulation() {
       const activeIndex = getActiveIndex();
       setActiveSlide(activeIndex + 1);
     });
+
+    window.addEventListener('resize', positionActiveSlide);
 
     toggleButtonsVisibility();
   }
