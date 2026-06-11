@@ -92,7 +92,7 @@
 }
 
 .dropdown-list::before {
-  content: "▲";
+  content: '▲';
   position: absolute;
   color: var(--black-1);
   top: -21px;
@@ -100,7 +100,7 @@
 }
 
 .dropdown-list.mobile::before {
-  content: "▲";
+  content: '▲';
   position: absolute;
   color: var(--black-1);
   top: -20px;
@@ -190,7 +190,7 @@
   }
 
   .header-list {
-    display: flex;
+    display: none;
     position: fixed;
     background-color: var(--primary-2);
     max-width: 190px;
@@ -214,6 +214,10 @@
     top: 0px;
     right: 0px;
     padding-top: 30px;
+  }
+
+  .header-list.opened {
+    display: flex;
   }
 
   .header-button {
@@ -250,7 +254,7 @@
   }
 
   .dropdown-list::before {
-    content: "▲";
+    content: '▲';
     position: absolute;
     color: var(--black-1);
     top: -20px;
