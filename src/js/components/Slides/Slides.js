@@ -33,6 +33,7 @@ export function initMousedownManipulation() {
   if (slidesContainer && slidesList && prevButton && nextButton) {
     const distance = { startX: 0, currentX: 0, finalPosition: 0 };
     const slides = slidesList.querySelectorAll('li');
+    let cancelScheduledPosition = null;
 
     if (!slides.length) {
       return;
@@ -56,9 +57,12 @@ export function initMousedownManipulation() {
       });
     }
 
-    function moveSlide(position) {
+    function moveSlide(position, shouldUpdateActive = true) {
       slidesList.style.transform = `translate3d(${position}px, 0, 0)`;
-      activeSlide(position);
+
+      if (shouldUpdateActive) {
+        activeSlide(position);
+      }
     }
 
     function positionActiveSlide() {
@@ -79,9 +83,40 @@ export function initMousedownManipulation() {
           position = distance.finalPosition + (containerCenter - activeCenter);
         }
 
-        moveSlide(position);
+        moveSlide(position, false);
         distance.finalPosition = position;
       }
+    }
+
+    function positionActiveSlideAfterTransition() {
+      if (cancelScheduledPosition) {
+        cancelScheduledPosition();
+      }
+
+      const currentActiveSlide = slidesList.querySelector('.active');
+
+      positionActiveSlide();
+
+      if (!currentActiveSlide) {
+        return;
+      }
+
+      const repositionAfterTransition = () => {
+        currentActiveSlide.removeEventListener('transitionend', repositionAfterTransition);
+        clearTimeout(fallbackTimer);
+        cancelScheduledPosition = null;
+        positionActiveSlide();
+      };
+
+      const fallbackTimer = setTimeout(repositionAfterTransition, 0);
+
+      currentActiveSlide.addEventListener('transitionend', repositionAfterTransition);
+
+      cancelScheduledPosition = () => {
+        currentActiveSlide.removeEventListener('transitionend', repositionAfterTransition);
+        clearTimeout(fallbackTimer);
+        cancelScheduledPosition = null;
+      };
     }
 
     function onMove(event) {
@@ -113,8 +148,8 @@ export function initMousedownManipulation() {
       }
 
       moveSlide(distance.finalPosition); // Chama novamente para garantir que os limites não serão ultrapassados
-      positionActiveSlide(); // Centraliza o slide
-      toggleButtonsVisibility();
+      positionActiveSlideAfterTransition(); // Centraliza o slide
+      mainupulateButtonsVisibility();
 
       window.removeEventListener('mousemove', onMove);
       window.removeEventListener('mouseup', onEnd);
@@ -140,8 +175,8 @@ export function initMousedownManipulation() {
 
       slides[index].classList.add('active');
 
-      positionActiveSlide();
-      toggleButtonsVisibility();
+      positionActiveSlideAfterTransition();
+      mainupulateButtonsVisibility();
     }
 
     slides.forEach((slide, index) => {
@@ -155,7 +190,7 @@ export function initMousedownManipulation() {
       return Array.from(slides).indexOf(currentActive);
     }
 
-    function toggleButtonsVisibility() {
+    function mainupulateButtonsVisibility() {
       const activeIndex = getActiveIndex();
 
       if (activeIndex === 0) {
@@ -184,6 +219,6 @@ export function initMousedownManipulation() {
 
     window.addEventListener('resize', positionActiveSlide);
 
-    toggleButtonsVisibility();
+    mainupulateButtonsVisibility();
   }
 }

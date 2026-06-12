@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --entry ./src/js/main-src.js --output-path ./src/js --output-filename main.js --mode development --watch",
-    "build": "webpack --entry ./src/js/main-src.js --output-path ./src/js --output-filename main.js --mode production"
+    "build": "webpack --entry ./src/js/main-src.js --output-path ./src/js --output-filename main.js --mode production",
+    "css:watch": "postcss src/css/main-src.css -o src/css/main.css --watch",
+    "css:build": "postcss src/css/main-src.css -o src/css/main.css"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,11 @@
     "eslint": "^10.4.1",
     "webpack": "^5.107.2",
     "webpack-cli": "^7.0.3"
+  },
+  "dependencies": {
+    "cssnano": "^8.0.2",
+    "postcss": "^8.5.15",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1"
   }
 }

@@ -1,0 +1,15 @@
+/* Estilos Globais */
+@import url(./global.css);
+@import url(./reset.css);
+@import url(./variables.css);
+
+/* Estilos Específicos */
+@import url(../js/components/Header/Header.css);
+@import url(../js/components/Footer/Footer.css);
+@import url(../js/components/Animals/Animals.css);
+@import url(../js/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.css);
+@import url(../js/components/About/About.css);
+@import url(../js/components/Contact/Contact.css);
+@import url(../js/components/Modal/Modal.css);
+@import url(../js/components/Numbers/Numbers.css);
+@import url(../js/components/Slides/Slides.css);
