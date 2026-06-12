@@ -65,6 +65,10 @@
   .slides-list {
     gap: 20px;
   }
+
+  .slides-list li img {
+    box-shadow: none;
+  }
 }
 
 @media (hover: hover) {
