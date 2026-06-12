@@ -10,13 +10,7 @@
 
 .slides-viewport {
   overflow: hidden;
-  cursor: grab;
-  touch-action: pan-y;
   width: 100%;
-}
-
-.slides-viewport.dragging {
-  cursor: grabbing;
 }
 
 .slides-list {
