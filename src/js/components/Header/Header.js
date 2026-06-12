@@ -17,7 +17,7 @@ export function Header() {
           <li><a class="header-link" href="#about">SOBRE</a></li>
 
           <li class="dropdown">
-            <a class="header-link" href="#faq">FAQ</a>
+            <a class="header-link" href="#faq" id="faq-link">FAQ</a>
             <ul class="dropdown-list">
               <li class="dropdown-item"><a href="#faq">São realmente fantásticos?</a></li>
               <li class="dropdown-item"><a href="#faq">São raros?</a></li>
@@ -42,10 +42,15 @@ export function Header() {
 export function initDropdownMenu() {
   const dropdownMenus = document.querySelectorAll('.dropdown');
   const answers = document.querySelectorAll('.answer');
+  const faqLink = document.getElementById('faq-link');
   let activeDropdown = null;
 
+  if (!faqLink) {
+    return;
+  }
+
   function closeDropdown(event) {
-    if (!activeDropdown || activeDropdown.contains(event.target)) {
+    if (!activeDropdown || event.target === faqLink) {
       return;
     }
 
