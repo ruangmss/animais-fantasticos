@@ -151,17 +151,29 @@ export function initMousedownManipulation() {
       positionActiveSlideAfterTransition(); // Centraliza o slide
       mainupulateButtonsVisibility();
 
-      window.removeEventListener('mousemove', onMove);
-      window.removeEventListener('mouseup', onEnd);
+      slidesContainer.classList.remove('dragging');
+
+      if (slidesContainer.hasPointerCapture(event.pointerId)) {
+        slidesContainer.releasePointerCapture(event.pointerId);
+      }
+
+      slidesContainer.removeEventListener('pointermove', onMove);
+      slidesContainer.removeEventListener('pointerup', onEnd);
+      slidesContainer.removeEventListener('pointercancel', onEnd);
     }
 
-    slidesContainer.addEventListener('mousedown', (event) => {
-      event.preventDefault();
+    slidesContainer.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'mouse' && event.button !== 0) {
+        return;
+      }
 
       distance.startX = event.clientX;
+      slidesContainer.classList.add('dragging');
+      slidesContainer.setPointerCapture(event.pointerId);
 
-      window.addEventListener('mousemove', onMove); // Eventos adicionados ao window para que funcionem caso o usuário saia do container de slides com o evento ativo
-      window.addEventListener('mouseup', onEnd); // Eventos adicionados ao window para que funcionem caso o usuário saia do container de slides com o evento ativo
+      slidesContainer.addEventListener('pointermove', onMove);
+      slidesContainer.addEventListener('pointerup', onEnd);
+      slidesContainer.addEventListener('pointercancel', onEnd);
     });
 
     function setActiveSlide(index) {
