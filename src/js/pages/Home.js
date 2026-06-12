@@ -10,7 +10,6 @@ import { Contact, initBusinessHours } from '../components/Contact/Contact.js';
 import { initSmoothReveal } from '../modules/smoothReveal.js';
 import { Modal, initModal } from '../components/Modal/Modal.js';
 import { Numbers, initFetchAnimals } from '../components/Numbers/Numbers.js';
-import { Slides, initMousedownManipulation } from '../components/Slides/Slides.js';
 
 export function Home() {
   let header = document.getElementById('header');
@@ -20,7 +19,7 @@ export function Home() {
   if (header && footer && app) {
     header.innerHTML = Header();
     footer.innerHTML = Footer();
-    app.innerHTML = Animals() + About() + FrequentlyAskedQuestions() + Numbers() + Slides() + Contact() + Modal();
+    app.innerHTML = Animals() + About() + FrequentlyAskedQuestions() + Numbers() + Contact() + Modal();
 
     // Funções referentes ao header
     initDropdownMenu();
@@ -43,8 +42,5 @@ export function Home() {
 
     // Função referente à seção Contato
     initBusinessHours();
-
-    // Função referente à seção Galeria
-    initMousedownManipulation();
   }
 }
