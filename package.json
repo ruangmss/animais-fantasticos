@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --entry ./src/js/main-src.js --output-path ./src/js --output-filename main.js --mode development --watch",
     "build": "webpack --entry ./src/js/main-src.js --output-path ./src/js --output-filename main.js --mode production",
-    "css:watch": "postcss src/css/main-src.css -o src/css/main.css --watch",
-    "css:build": "postcss src/css/main-src.css -o src/css/main.css"
+    "css:watch": "postcss src/css/main-src.css -o src/css/main.css --watch"
   },
   "repository": {
     "type": "git",
