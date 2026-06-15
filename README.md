@@ -24,7 +24,7 @@ O projeto utiliza uma estética de "catálogo científico", através de sua tipo
 
 ## 👤 Desenvolvedor
 
-Projeto desenvolvido por [Ruan Gomes] sob a orientação do curso da Origamid.
+Projeto desenvolvido por Ruan Gomes sob a orientação do curso da Origamid.
 
 “O aprendizado contínuo é o que transforma curiosidade em maestria.”
 
